@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_primary"
+    android:orientation="vertical"
+    tools:context="com.loliclub.eater.activity.AboutActivity">
+
+    <View
+        android:id="@id/statusbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:background="@color/color_primary" />
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_welcome"/>
+
+            <TextView
+                android:id="@id/aboutActivity_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_vertical_margin"
+                android:textSize="@dimen/abc_text_size_title_material"
+                android:text="@string/app_name"
+                android:textColor="@color/text_white_main"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_vertical_margin"
+                android:layout_marginBottom="@dimen/view_vertical_margin"
+                android:textColor="@color/text_white_main"
+                android:textSize="@dimen/abc_text_size_caption_material"
+                android:text="@string/copy_right"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/view_vertical_margin"
+                android:text="@string/aboutactivity_about"
+                android:textSize="@dimen/abc_text_size_caption_material"
+                android:textColor="@color/text_white_main"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

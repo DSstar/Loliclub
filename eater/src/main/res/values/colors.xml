@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- common -->
+    <color name="text_black_main">#CE000000</color>
+    <color name="text_black_sub">#8A000000</color>
+    <color name="text_white_main">#CEFFFFFF</color>
+    <color name="text_white_sub">#8AFFFFFF</color>
+    <color name="color_devide">#19000000</color>
+    <color name="nocolor">#00FFFFFF</color>
+    <color name="bg_grey_sub">#FFE0E0E0</color>
+
+    <!-- app common -->
+    <color name="color_primary">#FF9800</color>
+    <color name="color_primary_light">#FFB74D</color>
+    <color name="color_primary_dark">#F57C00</color>
+    <color name="activity_bg_white">#FFFFFF</color>
+    <color name="activity_bg_grap">#EEEEEE</color>
+
+</resources>

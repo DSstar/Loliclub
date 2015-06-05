@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="F:\AndroidProject\Loliclub\eater\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="F:\AndroidProject\Loliclub\eater\build\intermediates\pre-dexed\debug\classes-f78fcfef8970b53aef52d0fbe276bf6f548d9710.jar" />
+    </item>
+    <item
+        jar="F:\AndroidProject\Loliclub\eater\libs\Java-WebSocket-1.3.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="db2658f013fb163de4a99274c2eb9e17efe535d2">
+        <dex dex="F:\AndroidProject\Loliclub\eater\build\intermediates\pre-dexed\debug\Java-WebSocket-1.3.0-2d21564bbfff08e3645ba88d6acd7b3e2ca83a93.jar" />
+    </item>
+    <item
+        jar="F:\AndroidProject\Loliclub\eater\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="F:\AndroidProject\Loliclub\eater\build\intermediates\pre-dexed\debug\classes-3b338d0e3210fda369ea2602443c8895531a69ea.jar" />
+    </item>
+    <item
+        jar="D:\adt-bundle-windows-x86_64-20140702\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="F:\AndroidProject\Loliclub\eater\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-033c6984a357a72562efdef7ab6a4b57873a3b35.jar" />
+    </item>
+    <item
+        jar="F:\AndroidProject\Loliclub\eater\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="F:\AndroidProject\Loliclub\eater\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-de8a3d87804ed2cc35d7fe73ba3c92a5f548ac0d.jar" />
+    </item>
+
+</items>

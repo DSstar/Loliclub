@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- app common -->
+    <item name="statusbar" type="id"></item>
+    <item name="toolbar" type="id"></item>
+
+    <!-- menu action -->
+    <item name="action_search" type="id"></item>
+    <item name="action_eaterinfo" type="id"></item>
+    <item name="action_list" type="id"></item>
+    <item name="action_about" type="id"></item>
+    <item name="action_edit" type="id"></item>
+    <item name="action_admin" type="id"></item>
+
+    <!-- mainActivity -->
+    <item name="mainActivity_content" type="id"></item>
+    <item name="mainActivity_btn_flat" type="id"></item>
+    <item name="mainActivity_lv_menu" type="id"></item>
+    <item name="mainActivity_tv_tips" type="id"></item>
+
+    <!-- eaterActivity -->
+    <item name="eaterActivity_img_hear" type="id"></item>
+    <item name="eaterActivity_content" type="id"></item>
+    <item name="eaterActivity_btn_camera" type="id"></item>
+    <item name="eaterActivity_et_name" type="id"></item>
+
+    <!--menuActivity-->
+    <item name="menuActivity_tabs" type="id"></item>
+    <item name="menuActivity_viewpager" type="id"></item>
+
+    <!--menuFragment-->
+    <item name="menuFragment_listview" type="id"></item>
+
+    <!-- aboutActivity -->
+    <item name="aboutActivity_icon" type="id"></item>
+    <item name="aboutActivity_version" type="id"></item>
+    <item name="aboutActivity_command" type="id"></item>
+
+</resources>

@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.lifesense.eater.MainActivity" >
+
+    <item
+        android:id="@id/action_search"
+        android:title="@string/action_search"
+        app:actionViewClass="android.support.v7.widget.ShareActionProvider"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@id/action_eaterinfo"
+        app:showAsAction="never"
+        android:title="@string/action_eaterinfo"/>
+
+    <item
+        android:id="@id/action_about"
+        app:showAsAction="never"
+        android:title="@string/action_about"/>
+
+</menu>
