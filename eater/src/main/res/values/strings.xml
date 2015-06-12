@@ -4,11 +4,15 @@
     <!-- common -->
     <string name="app_name">Eater</string>
     <string name="team_info">LoliClub</string>
-    <string name="command">Command</string>
     <string name="copy_right">Copyright ©2015 Loliclub. All Rights Reserved</string>
+
     <!--title-->
     <string name="title_activity_eater">EaterInfo</string>
     <string name="title_activity_menu">Menu</string>
+    <string name="title_activity_order">Order</string>
+    <string name="title_activity_Analysis">Analysis</string>
+    <string name="title_activity_Chat">Chat</string>
+    <string name="title_activity_Setting">Setting</string>
     <string name="title_activity_about">About</string>
 
     <!-- login params -->
@@ -20,24 +24,33 @@
     <!-- menu -->
     <string name="action_search">Search</string>
     <string name="action_eaterinfo">EaterInfo</string>
-    <string name="action_list">List</string>
+    <string name="action_list">Menu</string>
     <string name="action_about">About</string>
     <string name="action_edit">Edit</string>
-    <string name="action_admin">Admin</string>
 
-    <!-- mainactivity -->
-    <string name="no_order">No Order</string>
+    <!--navigationFragment-->
+    <string name="navigation_signTitle">SignIn or SignUp</string>
+    <string name="navigation_menu">Menu</string>
+    <string name="navigation_order">Order</string>
+    <string name="navigation_analysis">Analysis</string>
+    <string name="navigation_chat">Chat</string>
+    <string name="navigation_setting">Setting</string>
+    <string name="navigation_about">About</string>
 
-    <!-- <EaterActivity -->
-    <string name="eateractivity_name">Eater Name</string>
-    <string name="eateractivity_password">Password</string>
-    <string name="eateractivity_header">Eater HeadImage</string>
-
-    <!--menuActivity-->
-
+    <!--signFragment-->
+    <string name="signFragment_name">Name</string>
+    <string name="signFragment_passwrod">Password</string>
+    <string name="signFragment_signIn">Sign In</string>
+    <string name="signFragment_signUp">Sign Up</string>
+    <string name="signFragment_showPassword">Show passwrod</string>
+    <string name="signFragment_noSigninTip">You have not sign in Eater, please sign in and finish the order or </string>
+    
+    <!--listViewItem-->
 
     <!--aboutActivity-->
-    <string name="aboutactivity_about">Welcome to LoliClub</string>
+    <string name="aboutActivity_about">If you have any suggestion,please tell me.By the way, I will not modify at all.←_←</string>
 
+    <!--tips-->
+    <string name="tips_notFinish">Have not finish</string>
 
 </resources>

@@ -14,13 +14,13 @@
     <include layout="@layout/toolbar" />
 
     <android.support.v4.view.ViewPager
-        android:id="@id/menuActivity_viewpager"
+        android:id="@id/menuFragment_viewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center" >
 
         <android.support.v4.view.PagerTabStrip
-            android:id="@id/menuActivity_tabs"
+            android:id="@id/menuFragment_tab"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/list_singleline"
             android:background="@color/color_primary"

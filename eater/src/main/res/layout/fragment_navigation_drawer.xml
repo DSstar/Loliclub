@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_horizontal_margin" >
+
+        <ImageView
+            android:id="@id/navigation_headimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@id/navigation_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/navigation_signTitle"
+                android:textSize="@dimen/abc_text_size_subhead_material"
+                android:textColor="@color/text_white_main"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_vertical_margin"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@id/navigation_menu"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_singleline_with_icon"
+                android:onClick="onNavigationItemClick"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                
+                <ImageView
+                    android:layout_width="@dimen/list_singleline_icon"
+                    android:layout_height="@dimen/list_singleline_icon"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:src="@mipmap/ic_launcher"
+                    android:contentDescription="@string/navigation_menu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/navigation_menu"
+                    android:textSize="@dimen/abc_text_size_subhead_material"
+                    android:textColor="@color/text_black_main"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/navigation_order"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_singleline_with_icon"
+                android:onClick="onNavigationItemClick"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/list_singleline_icon"
+                    android:layout_height="@dimen/list_singleline_icon"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:src="@mipmap/ic_launcher"
+                    android:contentDescription="@string/navigation_menu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/navigation_order"
+                    android:textSize="@dimen/abc_text_size_subhead_material"
+                    android:textColor="@color/text_black_main"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/navigation_analysis"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_singleline_with_icon"
+                android:onClick="onNavigationItemClick"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/list_singleline_icon"
+                    android:layout_height="@dimen/list_singleline_icon"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:src="@mipmap/ic_launcher"
+                    android:contentDescription="@string/navigation_menu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/navigation_analysis"
+                    android:textSize="@dimen/abc_text_size_subhead_material"
+                    android:textColor="@color/text_black_main"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/navigation_chat"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_singleline_with_icon"
+                android:onClick="onNavigationItemClick"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/list_singleline_icon"
+                    android:layout_height="@dimen/list_singleline_icon"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:src="@mipmap/ic_launcher"
+                    android:contentDescription="@string/navigation_menu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/navigation_chat"
+                    android:textSize="@dimen/abc_text_size_subhead_material"
+                    android:textColor="@color/text_black_main"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_vertical_margin"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_line"
+                    android:background="@color/bg_grey_sub"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/navigation_setting"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_singleline"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:onClick="onNavigationItemClick"
+                android:gravity="center_vertical"
+                android:background="@color/nocolor"
+                android:text="@string/navigation_setting"
+                android:textSize="@dimen/abc_text_size_subhead_material"
+                android:textColor="@color/text_black_main"/>
+
+            <TextView
+                android:id="@id/navigation_about"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_singleline"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:onClick="onNavigationItemClick"
+                android:gravity="center_vertical"
+                android:background="@color/nocolor"
+                android:text="@string/navigation_about"
+                android:textSize="@dimen/abc_text_size_subhead_material"
+                android:textColor="@color/text_black_main"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -14,37 +15,25 @@
         android:background="@color/color_primary" />
 
     <include layout="@layout/toolbar" />
-    
-    <RelativeLayout
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@id/mainActivity_drawer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
-        <TextView
-            android:id="@id/mainActivity_tv_tips"
+        <FrameLayout
+            android:id="@id/mainActivity_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:text="@string/no_order"
-            android:textColor="@color/text_black_main"
-            android:textSize="@dimen/abc_text_size_title_material"/>
+            android:layout_height="match_parent" />
 
-        <ListView
-            android:id="@id/mainActivity_lv_menu"
+        <fragment
+            android:id="@id/mainActivity_drawer_navigation"
+            android:name="com.loliclub.eater.activity.NavigationDrawerFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-        <Button
-            android:id="@id/mainActivity_btn_flat"
-            android:layout_width="@dimen/button_flat"
-            android:layout_height="@dimen/button_flat"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:background="@mipmap/icon_add"
-            android:elevation="1.5dp"/>
-
-    </RelativeLayout>
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+            tools:layout="@layout/fragment_navigation_drawer" />
+    </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>

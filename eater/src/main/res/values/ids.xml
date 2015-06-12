@@ -7,34 +7,59 @@
 
     <!-- menu action -->
     <item name="action_search" type="id"></item>
-    <item name="action_eaterinfo" type="id"></item>
-    <item name="action_list" type="id"></item>
-    <item name="action_about" type="id"></item>
-    <item name="action_edit" type="id"></item>
-    <item name="action_admin" type="id"></item>
+
+    <!--navigationFragment-->
+    <item name="navigation_headimg" type="id"></item>
+    <item name="navigation_username" type="id"></item>
+    <item name="navigation_menu" type="id"></item>
+    <item name="navigation_order" type="id"></item>
+    <item name="navigation_analysis" type="id"></item>
+    <item name="navigation_chat" type="id"></item>
+    <item name="navigation_setting" type="id"></item>
+    <item name="navigation_about" type="id"></item>
 
     <!-- mainActivity -->
     <item name="mainActivity_content" type="id"></item>
-    <item name="mainActivity_btn_flat" type="id"></item>
-    <item name="mainActivity_lv_menu" type="id"></item>
-    <item name="mainActivity_tv_tips" type="id"></item>
-
-    <!-- eaterActivity -->
-    <item name="eaterActivity_img_hear" type="id"></item>
-    <item name="eaterActivity_content" type="id"></item>
-    <item name="eaterActivity_btn_camera" type="id"></item>
-    <item name="eaterActivity_et_name" type="id"></item>
-
-    <!--menuActivity-->
-    <item name="menuActivity_tabs" type="id"></item>
-    <item name="menuActivity_viewpager" type="id"></item>
+    <item name="mainActivity_drawer" type="id"></item>
+    <item name="mainActivity_drawer_navigation" type="id"></item>
 
     <!--menuFragment-->
     <item name="menuFragment_listview" type="id"></item>
+    <item name="menuFragment_tab" type="id"></item>
+    <item name="menuFragment_viewPager" type="id"></item>
+    <item name="menuFragment_indicator" type="id"></item>
 
-    <!-- aboutActivity -->
-    <item name="aboutActivity_icon" type="id"></item>
+    <!--meatActivity-->
+    <item name="meatActivity_topPic" type="id"></item>
+    <item name="meatActivity_btn_collection" type="id"></item>
+    <item name="meatActivity_meatname" type="id"></item>
+    <item name="meatActivity_score" type="id"></item>
+    <item name="meatActivity_price" type="id"></item>
+    <item name="meatActivity_btn_order" type="id"></item>
+
+    <!--signInFragment & signUpFragment-->
+    <item name="signFragment_userHead" type="id"></item>
+    <item name="signFragment_username" type="id"></item>
+    <item name="signFragment_password" type="id"></item>
+    <item name="signFragment_btn_signin" type="id"></item>
+    <item name="signFragment_btn_signup" type="id"></item>
+
+    <!-- aboutFragment -->
     <item name="aboutActivity_version" type="id"></item>
-    <item name="aboutActivity_command" type="id"></item>
+
+    <!--Dialog-->
+    <item name="dialog_username" type="id"></item>
+    <item name="dialog_password" type="id"></item>
+    <item name="dialog_btn_signin" type="id"></item>
+    <item name="dialog_btn_signup" type="id"></item>
+    <item name="dialog_check_showpassword" type="id"></item>
+    <item name="snackbar_btn_view" type="id"></item>
+
+    <!--listViewItem-->
+    <item name="item_picture" type="id"></item>
+    <item name="item_title" type="id"></item>
+    <item name="item_subtitle" type="id"></item>
+    <item name="item_tips" type="id"></item>
+    <item name="item_rigntBtn" type="id"></item>
 
 </resources>

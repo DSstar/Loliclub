@@ -34,18 +34,6 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".activity.EaterActivity"
-            android:label="@string/title_activity_eater"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".activity.MenuActivity"
-            android:label="@string/title_activity_menu"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
             android:name=".activity.AboutActivity"
             android:label="@string/title_activity_about"
             android:launchMode="singleTask"

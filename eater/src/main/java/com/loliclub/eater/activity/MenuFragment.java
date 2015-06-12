@@ -1,10 +1,13 @@
 package com.loliclub.eater.activity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerTabStrip;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,20 +15,23 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.loliclub.eater.R;
+import com.loliclub.eater.view.MenuFragmentPagerAdapter;
 
 public class MenuFragment extends Fragment {
 
-	private ListView listView;
-	
-	private List<String> menuList;
+	private ViewPager viewPager;
+	private PagerTabStrip pagerTabStrip;
+
+
+	private List<String> titleList;
+	private List<Fragment> viewList;
 
 	public MenuFragment(){
 		super();
 	}
 
-	public static final MenuFragment newInstance(List<String> menuList) {
+	public static final MenuFragment newInstance() {
 		MenuFragment fragment = new MenuFragment();
-		fragment.setMenuList(menuList);
 		return fragment;
 	}
 
@@ -33,17 +39,46 @@ public class MenuFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_menu, null);
-		
-		listView = (ListView) rootView.findViewById(R.id.menuFragment_listview);
-		listView.setAdapter(new ArrayAdapter<String>(getActivity(), R.layout.list_simple_item, menuList));
+
+		initParams();
+		initUI(rootView);
+		initEvent();
+
 		return rootView;
 	}
 
-	public List<String> getMenuList() {
-		return menuList;
+	private void initParams() {
+		titleList = new ArrayList<String>();
+		viewList = new ArrayList<Fragment>();
+
+		titleList.add("tab1");
+		titleList.add("tab2");
+		titleList.add("tab3");
+		titleList.add("tab4");
+
+		List<String> menuList = new ArrayList<String>();
+		menuList.add("menu1");
+		menuList.add("menu2");
+		menuList.add("menu3");
+		menuList.add("menu4");
+		menuList.add("menu5");
+
+//		viewList.add(MenuFragment.newInstance(menuList));
+//		viewList.add(MenuFragment.newInstance(menuList));
+//		viewList.add(MenuFragment.newInstance(menuList));
+//		viewList.add(MenuFragment.newInstance(menuList));
+
 	}
 
-	public void setMenuList(List<String> menuList) {
-		this.menuList = menuList;
+	private void initUI(View rootView) {
+		viewPager = (ViewPager) rootView.findViewById(R.id.menuFragment_viewPager);
+		pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.menuFragment_tab);
+
+		viewPager.setAdapter(new MenuFragmentPagerAdapter(getActivity().getSupportFragmentManager(), viewList, titleList));
 	}
+
+	private void initEvent() {
+
+	}
+
 }

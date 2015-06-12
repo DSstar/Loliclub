@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:layout_marginTop="@dimen/view_vertical_margin"
-                android:text="@string/aboutactivity_about"
+                android:text="@string/aboutActivity_about"
                 android:textSize="@dimen/abc_text_size_caption_material"
                 android:textColor="@color/text_white_main"/>
 
