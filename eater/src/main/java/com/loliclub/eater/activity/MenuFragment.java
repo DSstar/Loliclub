@@ -19,8 +19,8 @@ import com.loliclub.eater.view.MenuFragmentPagerAdapter;
 
 public class MenuFragment extends Fragment {
 
-	private ViewPager viewPager;
-	private PagerTabStrip pagerTabStrip;
+	private ViewPager mViewPager;
+	private PagerTabStrip mPagerTabStrip;
 
 
 	private List<String> titleList;
@@ -51,6 +51,10 @@ public class MenuFragment extends Fragment {
 		titleList = new ArrayList<String>();
 		viewList = new ArrayList<Fragment>();
 
+		/**
+		 * 初始化加载数据
+		 */
+
 		titleList.add("tab1");
 		titleList.add("tab2");
 		titleList.add("tab3");
@@ -71,10 +75,10 @@ public class MenuFragment extends Fragment {
 	}
 
 	private void initUI(View rootView) {
-		viewPager = (ViewPager) rootView.findViewById(R.id.menuFragment_viewPager);
-		pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.menuFragment_tab);
+		mViewPager = (ViewPager) rootView.findViewById(R.id.menuFragment_viewPager);
+		mPagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.menuFragment_tab);
 
-		viewPager.setAdapter(new MenuFragmentPagerAdapter(getActivity().getSupportFragmentManager(), viewList, titleList));
+		mViewPager.setAdapter(new MenuFragmentPagerAdapter(getActivity().getSupportFragmentManager(), viewList, titleList));
 	}
 
 	private void initEvent() {

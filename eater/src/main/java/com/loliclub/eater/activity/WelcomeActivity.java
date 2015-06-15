@@ -12,15 +12,15 @@ public class WelcomeActivity extends Activity {
 
 	private static final long DELAY = 1000l;
 
-	private Handler handler;
+	private Handler mHandler;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_welcome);
 
-		handler = new Handler();
-		handler.postDelayed(new Runnable() {
+		mHandler = new Handler();
+		mHandler.postDelayed(new Runnable() {
 
 			@Override
 			public void run() {

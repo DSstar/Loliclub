@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.loliclub.eater.activity.SignInActivity">
+
+    <View
+        android:id="@id/statusbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:background="@color/color_primary" />
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@mipmap/ic_welcome"
+            android:contentDescription="@string/signActivity_name"/>
+
+        <EditText
+            android:id="@id/signActivity_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/abc_text_size_subhead_material"
+            android:hint="@string/signActivity_name"
+            android:textColor="@color/color_primary"
+            android:textColorHint="@color/text_black_sub" />
+
+        <EditText
+            android:id="@id/signActivity_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/abc_text_size_subhead_material"
+            android:hint="@string/signActivity_passwrod"
+            android:textColor="@color/color_primary"
+            android:textColorHint="@color/text_black_sub" />
+
+        <Button
+            android:id="@id/signActivity_btn_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="@color/color_primary"
+            android:text="@string/signActivity_signIn" />
+
+    </LinearLayout>
+
+</RelativeLayout>

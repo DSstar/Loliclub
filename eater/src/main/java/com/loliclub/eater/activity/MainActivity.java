@@ -1,5 +1,6 @@
 package com.loliclub.eater.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -18,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
 	private NavigationDrawerFragment navigationFragment;
 
-	private Toolbar toolbar;
-	private DrawerLayout drawerLayout;
-	private ActionBarDrawerToggle drawerToggle;
+	private Toolbar mToolbar;
+	private DrawerLayout mDrawerLayout;
+	private ActionBarDrawerToggle mDrawerToggle;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +48,19 @@ public class MainActivity extends AppCompatActivity {
 		navigationFragment = (NavigationDrawerFragment) getSupportFragmentManager()
 				.findFragmentById(R.id.mainActivity_drawer_navigation);
 
-		toolbar = (Toolbar) findViewById(R.id.toolbar);
-		drawerLayout = (DrawerLayout) findViewById(R.id.mainActivity_drawer);
+		mToolbar = (Toolbar) findViewById(R.id.toolbar);
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.mainActivity_drawer);
 
 		// 初始化Toolbar
-		setSupportActionBar(toolbar);
+		setSupportActionBar(mToolbar);
 		getSupportActionBar().setDisplayShowTitleEnabled(true);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar,
 				R.string.app_name, R.string.app_name);
-		drawerToggle.syncState();
-		drawerLayout.setDrawerListener(drawerToggle);
+		mDrawerToggle.syncState();
+		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-//		setContentFragment(MenuFragment.newInstance(null));
+		setContentFragment(MenuFragment.newInstance());
 	}
 
 	/**
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 	public void onNavigationItemClick(View v) {
 		switch (v.getId()) {
 			case R.id.navigation_menu:
-
+				setContentFragment(MenuFragment.newInstance());
 				break;
 			case R.id.navigation_order:
 
@@ -100,8 +101,11 @@ public class MainActivity extends AppCompatActivity {
 			case R.id.navigation_setting:
 
 				break;
-			case R.id.navigation_about:
+			case R.id.navigation_admin:
 
+				break;
+			case R.id.navigation_about:
+				startActivity(new Intent(getApplication(), AboutActivity.class));
 				break;
 			default:
 				break;

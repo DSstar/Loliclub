@@ -16,6 +16,7 @@
     <item name="navigation_analysis" type="id"></item>
     <item name="navigation_chat" type="id"></item>
     <item name="navigation_setting" type="id"></item>
+    <item name="navigation_admin" type="id"></item>
     <item name="navigation_about" type="id"></item>
 
     <!-- mainActivity -->
@@ -37,12 +38,12 @@
     <item name="meatActivity_price" type="id"></item>
     <item name="meatActivity_btn_order" type="id"></item>
 
-    <!--signInFragment & signUpFragment-->
-    <item name="signFragment_userHead" type="id"></item>
-    <item name="signFragment_username" type="id"></item>
-    <item name="signFragment_password" type="id"></item>
-    <item name="signFragment_btn_signin" type="id"></item>
-    <item name="signFragment_btn_signup" type="id"></item>
+    <!--signInActivity & signUpActivity-->
+    <item name="signActivity_userHead" type="id"></item>
+    <item name="signActivity_username" type="id"></item>
+    <item name="signActivity_password" type="id"></item>
+    <item name="signActivity_btn_signin" type="id"></item>
+    <item name="signActivity_btn_signup" type="id"></item>
 
     <!-- aboutFragment -->
     <item name="aboutActivity_version" type="id"></item>

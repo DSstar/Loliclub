@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_primary"
+        android:background="@mipmap/bg_navigation_title"
         android:orientation="horizontal"
         android:padding="@dimen/activity_horizontal_margin" >
 
@@ -63,7 +63,7 @@
                     android:layout_height="@dimen/list_singleline_icon"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_menu"
                     android:contentDescription="@string/navigation_menu" />
 
                 <TextView
@@ -89,7 +89,7 @@
                     android:layout_height="@dimen/list_singleline_icon"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_order"
                     android:contentDescription="@string/navigation_menu" />
 
                 <TextView
@@ -115,7 +115,7 @@
                     android:layout_height="@dimen/list_singleline_icon"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_analysis"
                     android:contentDescription="@string/navigation_menu" />
 
                 <TextView
@@ -141,7 +141,7 @@
                     android:layout_height="@dimen/list_singleline_icon"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_chat"
                     android:contentDescription="@string/navigation_menu" />
 
                 <TextView
@@ -176,6 +176,19 @@
                 android:gravity="center_vertical"
                 android:background="@color/nocolor"
                 android:text="@string/navigation_setting"
+                android:textSize="@dimen/abc_text_size_subhead_material"
+                android:textColor="@color/text_black_main"/>
+
+            <TextView
+                android:id="@id/navigation_admin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_singleline"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:onClick="onNavigationItemClick"
+                android:gravity="center_vertical"
+                android:background="@color/nocolor"
+                android:text="@string/navigation_admin"
                 android:textSize="@dimen/abc_text_size_subhead_material"
                 android:textColor="@color/text_black_main"/>
 

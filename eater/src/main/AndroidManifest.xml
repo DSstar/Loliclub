@@ -39,8 +39,19 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
-        <service android:name=".services.NetworkService">
-
+        <activity
+            android:name=".activity.SignInActivity"
+            android:label="@string/title_activity_sign_in"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <service android:name=".services.NetworkService" >
         </service>
     </application>
 

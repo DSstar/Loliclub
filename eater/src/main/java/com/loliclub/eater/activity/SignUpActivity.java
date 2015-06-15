@@ -1,28 +1,21 @@
 package com.loliclub.eater.activity;
 
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 
 import com.loliclub.eater.R;
 
-public class AboutActivity extends AppCompatActivity {
+public class SignUpActivity extends ActionBarActivity {
 
     private Toolbar mToolbar;
-    private TextView mTextViewVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_sign_up);
 
         initParams();
         initUI();
@@ -33,29 +26,19 @@ public class AboutActivity extends AppCompatActivity {
      * 初始化参数
      */
     private void initParams() {
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        // 初始化Toolbar
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     /**
      * 初始化UI
      */
     private void initUI() {
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mTextViewVersion = (TextView) findViewById(R.id.aboutActivity_version);
 
-        // 初始化Toolbar
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        // 获取APP版本号（名）
-        try {
-            PackageManager packageManager = getPackageManager();
-            PackageInfo packageInfo = packageManager.getPackageInfo(getPackageName(), 0);
-            mTextViewVersion.setText("V" + packageInfo.versionName);
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -68,7 +51,7 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_about, menu);
+//        getMenuInflater().inflate(R.menu.menu_sign_up, menu);
         return true;
     }
 
@@ -80,9 +63,10 @@ public class AboutActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_setting) {
-//            return true;
-//        }
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }
