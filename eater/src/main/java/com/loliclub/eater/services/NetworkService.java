@@ -111,6 +111,16 @@ public class NetworkService extends Service {
 	 * 网络模块常量：accessToken
 	 */
 	public static String ACCESSTOKEN;
+
+	/**
+	 * 服务器登录标志
+	 */
+	public static boolean IS_SIGNIN_SERVER;
+
+	/**
+	 * WebSocket连接标志
+	 */
+	public static boolean IS_SIGNIN_WEBSOCKET;
 	
 	private ServiceBinder serviceBinder;
 	private WebSocketService webSocketService;
@@ -126,8 +136,7 @@ public class NetworkService extends Service {
 	private WebSocketMessage nopMessage;
 	private DatabaseHelper databaseHelper;
 
-	private boolean isNetworkConnnected;
-	private boolean isSignInService;
+	private int networkStatus;
 	private boolean isReconnectWebsocket;
 	
 	private String clientId;
@@ -166,9 +175,10 @@ public class NetworkService extends Service {
 
 	private void initParams() {
 		// 初始化本服务参数
-		isSignInService = false;
+		IS_SIGNIN_SERVER = false;
+		IS_SIGNIN_WEBSOCKET = false;
 		isReconnectWebsocket = true;
-		isNetworkConnnected = this.checkNetworkStatus();
+		networkStatus = this.checkNetworkStatus();
 
 		serviceBinder = new ServiceBinder();
 		// 用户异步发送网络请求的处理器
@@ -181,12 +191,12 @@ public class NetworkService extends Service {
 
 			@Override
 			public void onReceive(Context context, Intent intent) {
-				isNetworkConnnected = checkNetworkStatus();
+				networkStatus = checkNetworkStatus();
 				// 网络状态改变，
 				// 如果网络断开了，则断开WebSocketService
 				// 否则重新登陆或连接Websocket
-				if (isNetworkConnnected) {
-					if (isSignInService)
+				if (isNetworkConnected()) {
+					if (IS_SIGNIN_SERVER)
 						connectWebSocket();
 					else{
 						websocketHandler.post(signinThread);
@@ -205,7 +215,6 @@ public class NetworkService extends Service {
 		threadPool = (ThreadPoolExecutor)Executors.newCachedThreadPool();
 		// 发送心跳指令
 		patrolThread = new Runnable() {
-
 			@Override
 			public void run() {
 				Log.e(TAG, "post nop action to webSocket");
@@ -218,20 +227,16 @@ public class NetworkService extends Service {
 		// 登录线程，由于后台登陆有可能出现错误，因此使用登录线程重复登陆
 		// 登录间隔为10S
 		signinThread = new Runnable() {
-			
 			@Override
 			public void run() {
-				if (isSignInService)
-					return;
-				else {
+				if (!IS_SIGNIN_SERVER) {
 					signIn();
 					websocketHandler.postDelayed(signinThread, DELAY_RECONNECT);
 				}
 			}
 		};
-		// 下载线程，用于下载更新的数据
+		// 下载数据线程
 		downloadThread = new Runnable() {
-			
 			@Override
 			public void run() {
 				download();
@@ -267,12 +272,12 @@ public class NetworkService extends Service {
 			@Override
 			public void onClose(int code, String content, boolean flag) {
 				Log.e(TAG, "Websocket Close");
+				IS_SIGNIN_WEBSOCKET = false;
 				// 关闭WebSocket，清除线程池的所有等待的线程
 				websocketHandler.removeCallbacksAndMessages(null);
 				// 如果WebSocket异常关闭，则重新连接
-				if(isNetworkConnnected && isSignInService && isReconnectWebsocket)
+				if(isNetworkConnected() && IS_SIGNIN_SERVER && isReconnectWebsocket)
 					websocketHandler.postDelayed(new Runnable() {
-
 						@Override
 						public void run() {
 							connectWebSocket();
@@ -283,10 +288,10 @@ public class NetworkService extends Service {
 			@Override
 			public void onError(Exception e) {
 				Log.e(TAG, "Websocket Error");
+				IS_SIGNIN_WEBSOCKET = false;
 				e.printStackTrace();
 				// 如果websock发生错误，尝试重新连接
 				websocketHandler.postDelayed(new Runnable() {
-					
 					@Override
 					public void run() {
 						connectWebSocket();
@@ -303,6 +308,7 @@ public class NetworkService extends Service {
 					WebSocketMessage websocketMessage = new WebSocketMessage(msg);
 					switch (websocketMessage.getAction()) {
 					case WebSocketMessage.ACTION_LOGIN_SUCCESS:
+						IS_SIGNIN_WEBSOCKET = true;
 						nopMessage.setSessionId(SESSION_ID);
 						websocketHandler.post(patrolThread);
 						break;
@@ -344,7 +350,7 @@ public class NetworkService extends Service {
 		webSocketService.close();
 		threadPool.shutdown();
 		// 退出登录
-		ServerAPI.logout(getApplicationContext(), SESSION_ID, null);
+		ServerAPI.logout(SESSION_ID, null);
 		super.onDestroy();
 	}
 
@@ -361,7 +367,7 @@ public class NetworkService extends Service {
 	 * @return 连通返回true，否则false
 	 */
 	public boolean isNetworkConnected() {
-		return this.isNetworkConnnected;
+		return networkStatus != 0;
 	}
 
 	/**
@@ -376,24 +382,24 @@ public class NetworkService extends Service {
 	/**
 	 * 检查网络是否连通，该方法一般在网络状态改变是才使用，平时查询网络状态使用{@link #isNetworkConnected()}
 	 * 
-	 * @return
+	 * @return 如果网络连通则返回true，否则false
 	 */
-	public boolean checkNetworkStatus() {
+	public int checkNetworkStatus() {
+		networkStatus = 0;
 		ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo networkInfo = connManager
-				.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-		if (networkInfo != null && State.CONNECTED == networkInfo.getState()) {
-			isNetworkConnnected = true;
+		NetworkInfo networkInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+		if(networkInfo != null && State.CONNECTED == networkInfo.getState()) {
+			networkStatus |= 0x01;
 		} else {
-			networkInfo = connManager
-					.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-			if (networkInfo != null
-					&& State.CONNECTED == networkInfo.getState())
-				isNetworkConnnected = true;
-			else
-				isNetworkConnnected = false;
+			networkStatus |= 0x00;
 		}
-		return isNetworkConnnected;
+		networkInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+		if ((networkInfo != null && State.CONNECTED == networkInfo.getState())) {
+			networkStatus |= 0x02;
+		} else {
+			networkStatus |= 0x00;
+		}
+		return networkStatus;
 	}
 	
 	/**
@@ -401,9 +407,9 @@ public class NetworkService extends Service {
 	 */
 	public void signIn() {
 		// 首先检查网络状态
-		if (!isNetworkConnnected)
+		if (!isNetworkConnected())
 			return;
-		ServerAPI.signin(getApplicationContext(), USERNAME, MD5.makeMD5(PASSWORD, false), APP_NAME,
+		ServerAPI.signin(USERNAME, MD5.makeMD5(PASSWORD, false), APP_NAME,
 				CARRIER, 1, clientId, new HttpClientResponseHandler() {
 
 					@Override
@@ -413,7 +419,7 @@ public class NetworkService extends Service {
 						Log.e(TAG, "responseCode is " + responseCode);
 						Log.e(TAG, "response is " + response.toString());
 						if (responseCode == 200) {
-							isSignInService = true;
+							IS_SIGNIN_SERVER = true;
 							SESSION_ID = response.optString(ServerAPI.RESPONSE_SESSIONID);
 							ACCESSTOKEN = response.optString(ServerAPI.RESPONSE_ACCESSTOKEN);
 							connectWebSocket();
@@ -442,7 +448,7 @@ public class NetworkService extends Service {
 	 * 下载并解析数据
 	 */
 	public void download() {
-		if (!isNetworkConnnected)
+		if (!isNetworkConnected())
 			return;
 		// 获取timestamp
 		long timestamp = 0;
@@ -451,7 +457,7 @@ public class NetworkService extends Service {
 		if (account != null)
 			timestamp = account.timestamp;
 		Log.e(TAG, "timeStamp is " + timestamp);
-		ServerAPI.download(getApplicationContext(), ACCESSTOKEN, SESSION_ID,
+		ServerAPI.download(ACCESSTOKEN, SESSION_ID,
 				timestamp, new HttpClientResponseHandler() {
 
 					@Override
@@ -463,6 +469,12 @@ public class NetworkService extends Service {
 							// 保存nextTs
 							String fileUrl = response.optString(ServerAPI.RESPONSE_FILEURL);
 							// 下载并解析数据
+							new Thread(new Runnable() {
+								@Override
+								public void run() {
+
+								}
+							}).start();
 							try {
 								// 下载
 								File zipFile = downloadFile(new URL(fileUrl), getApplicationContext().getExternalCacheDir().getAbsolutePath());
@@ -507,7 +519,7 @@ public class NetworkService extends Service {
 						e.printStackTrace();
 					}
 
-				}, true);
+				});
 	}
 
 	/**
@@ -747,15 +759,15 @@ public class NetworkService extends Service {
 		if (file == null)
 			return null;
 		JSONObject jsonObject = null;
-		StringBuffer stringBuffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		BufferedReader reader = null;
 		try {
 			reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 			String line = null;
 			while((line = reader.readLine()) != null) {
-				stringBuffer.append(line);
+				buffer.append(line);
 			}
-			jsonObject = new JSONObject(stringBuffer.toString());
+			jsonObject = new JSONObject(buffer.toString());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -777,7 +789,7 @@ public class NetworkService extends Service {
 	 * 连接WebSocket
 	 */
 	private void connectWebSocket() {
-		if (!isNetworkConnnected || !isSignInService)
+		if (!isNetworkConnected() || !IS_SIGNIN_SERVER)
 			return;
 		// 每次连接WebSocket都必须重新建立一个WebSocket客户端
 		String url = null;
@@ -795,7 +807,7 @@ public class NetworkService extends Service {
 	 * @return
 	 */
 	private String getWebSocketURI(String serverURL) {
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		buffer.append(serverURL);
 		buffer.append("?");
 		buffer.append("sessionId");

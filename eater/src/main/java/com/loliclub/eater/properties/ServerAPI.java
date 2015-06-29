@@ -91,8 +91,6 @@ public class ServerAPI {
 	/**
 	 * 用户登录，第三方初始登录时需要用户初始化设置成员信息
 	 * 
-	 * @param context
-	 *            设备上下文环境
 	 * @param loginname
 	 *            用户名，使用第三方登录时，登录名为openID，
 	 * @param password
@@ -108,14 +106,16 @@ public class ServerAPI {
 	 * @param callBack
 	 *            回调方法
 	 */
-	public static void signin(final Context context, String loginname,
+	public static void signin(String loginname,
 			String password, String appname, String carrier, int loginType,
 			String clientId, final HttpClientResponseHandler callBack) {
 		String timestamp = String.valueOf(System.currentTimeMillis());
 		String nonce = Integer.toString((int) (Math.random() * 100000));
 		String signature = calculateSignature(password, timestamp, nonce);
-		String url = buildStrURL(UrlBuilder.URL_SIGNIN, signature, timestamp,
-				nonce);
+		Map<String, String> params = new HashMap<>();
+		params.put("signature", signature);
+		params.put("timestamp", timestamp);
+		params.put("nonce", nonce);
 		JSONObject jsonObj = new JSONObject();
 		try {
 			jsonObj.put("loginname", loginname);
@@ -131,7 +131,7 @@ public class ServerAPI {
 			e.printStackTrace();
 			callBack.onFailure(e, "");
 		}
-		HttpClient.getInstance().post(context, url, jsonObj, callBack);
+		HttpClient.getInstance().post(UrlBuilder.URL_SIGNIN, params, jsonObj, callBack);
 	}
 
 	/**
@@ -237,14 +237,13 @@ public class ServerAPI {
 	
 	/**
 	 * 退出登录
-	 * @param context
 	 * @param sessionId
 	 * @param cback
 	 */
-	public static void logout(final Context context, String sessionId, final HttpClientResponseHandler cback){
+	public static void logout(String sessionId, final HttpClientResponseHandler cback){
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("sessionId", sessionId);
-		HttpClient.getInstance().get(context, UrlBuilder.URL_LOGOUT, params, cback);
+		HttpClient.getInstance().get(UrlBuilder.URL_LOGOUT, params, null, cback);
 	}
 	
 	/**
@@ -492,30 +491,21 @@ public class ServerAPI {
 	
 	/**
 	 * 添加设备信息
-	 * @param context 设备上下文环境
-	 * @param device 设备对象
-	 * @param cback 回调方法
-	 * @param async 异步标志
+	 * @param restaurant 设备对象
+	 * @param callback 回调方法
 	 */
-	/*
-	public static void addDevice(final Context context,Device device,final JsonHttpResponseHandler cback,final boolean async){
-		if(NetManager.sessionId == null || "".equals(NetManager.sessionId)){
-			//返回错误信息
-			return;
-		}
-		String timestamp = Long.toString(Calendar.getInstance().getTimeInMillis());
-		String nonce = Integer.toString((int)(Math.random() * 100000));
-		String signature = calculateSignature(timestamp, nonce);
-
-		String url=toStrURL(UrlBuilder.URL_BASE,UrlBuilder.URL_ADDDEVICE, signature, timestamp, nonce, NetManager.sessionId);
-		LSLog.e(LSLog.LS_NET,"-- addDevice --");
-		DeviceRequest deviceRequest = new DeviceRequest();
-		NetManager.post(context, url, deviceRequest.toJsonObject(device), cback);
-		LSLog.e(LSLog.LS_NET,"URL is " + url);
-		LSLog.e(LSLog.LS_NET,"jsonObj is " + deviceRequest.toJsonObject(device).toString());
+	public static void addRestaurant(String accesstoken, String sessionId, JSONObject restaurant, final HttpClientResponseHandler callback){
+		String timestamp = Long.toString(System.currentTimeMillis());
+		String nonce = Integer.toString((int) (Math.random() * 100000));
+		String signature = calculateSignature(accesstoken, timestamp, nonce);
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("signature", signature);
+		params.put("timestamp", timestamp);
+		params.put("nonce", nonce);
+		params.put("sessionId", sessionId);
+		HttpClient.getInstance().post(UrlBuilder.URL_ADDDEVICE, params, restaurant, callback);
 	}
-	*/
-	
+
 	/**
 	 * 绑定家庭成员       
 	 * @param context 设备上下文环境
@@ -806,24 +796,25 @@ public class ServerAPI {
 	
 	/**
 	 * 下载数据，数据以文件形式返回
-	 * @param context 设备上下文环境
 	 * @param ts 时间戳，0代表初始化下载，其他数字代表更新下载
 	 * @param cback 回调方法
-	 * @param async 异步标志
 	 */
-	public static void download(final Context context,String accessToken, String sessionId, long ts,final HttpClientResponseHandler cback,final boolean async){
+	public static void download(String accessToken, String sessionId, long ts,final HttpClientResponseHandler cback){
 		String timestamp = Long.toString(System.currentTimeMillis());
-		String nonce = Integer.toString((int)(Math.random() * 100000));
-		String signature = calculateSignature(accessToken,timestamp, nonce);
-
-		String url=buildStrURL(UrlBuilder.URL_DOWNLOAD, signature, timestamp, nonce, sessionId);
-		JSONObject jsonObj = new JSONObject(); 
+		String nonce = Integer.toString((int) (Math.random() * 100000));
+		String signature = calculateSignature(accessToken, timestamp, nonce);
+		Map<String, String> params = new HashMap<>();
+		params.put("signature", signature);
+		params.put("timestamp", timestamp);
+		params.put("nonce", nonce);
+		params.put("sessionId",sessionId);
+		JSONObject jsonObj = new JSONObject();
 		try {
 			jsonObj.put("ts", ts);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		HttpClient.getInstance().post(context, url, jsonObj, cback);
+		HttpClient.getInstance().post(UrlBuilder.URL_DOWNLOAD, params, jsonObj, cback);
 	}
 	
 	/**
@@ -1187,6 +1178,7 @@ public class ServerAPI {
 	 * @param nonce
 	 * @return
 	 */
+	/*
 	protected static String buildStrURL(String url,String signature,String timestamp,
 			String nonce){
 		StringBuffer buffer = new StringBuffer();
@@ -1200,6 +1192,7 @@ public class ServerAPI {
 		buffer.append("&");
 		return buffer.toString();
 	}
+	*/
 
 	/**
 	 * 组装URL
@@ -1210,6 +1203,7 @@ public class ServerAPI {
 	 * @param sessionId
 	 * @return
 	 */
+	/*
 	protected static String buildStrURL(String url,String signature,String timestamp,
 			String nonce,String sessionId){
 		StringBuffer buffer = new StringBuffer();
@@ -1224,7 +1218,8 @@ public class ServerAPI {
 		buffer.append("sessionId=" +sessionId);
 		return buffer.toString();
 	}
-	
+	*/
+
 	/**
 	 * 计算Signature
 	 * @param timestamp

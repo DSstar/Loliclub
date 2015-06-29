@@ -4,70 +4,102 @@
     android:layout_height="match_parent"
     tools:context="com.loliclub.eater.activity.SignInActivity">
 
-    <View
-        android:id="@id/statusbar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/status_bar_height"
-        android:background="@color/color_primary" />
-
-    <include layout="@layout/toolbar" />
-
     <LinearLayout
+        android:id="@id/signActivity_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:src="@mipmap/ic_welcome"
-            android:contentDescription="@string/signActivity_name"/>
-
-        <EditText
-            android:id="@id/signActivity_username"
+        <View
+            android:id="@id/statusbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:gravity="center_horizontal"
-            android:textSize="@dimen/abc_text_size_subhead_material"
-            android:hint="@string/signActivity_name"
-            android:textColor="@color/color_primary"
-            android:textColorHint="@color/text_black_sub" />
+            android:layout_height="@dimen/status_bar_height"
+            android:background="@color/color_primary" />
 
-        <EditText
-            android:id="@id/signActivity_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:gravity="center_horizontal"
-            android:textSize="@dimen/abc_text_size_subhead_material"
-            android:hint="@string/signActivity_passwrod"
-            android:textColor="@color/color_primary"
-            android:textColorHint="@color/text_black_sub" />
-
-        <Button
-            android:id="@id/signActivity_btn_signin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:background="@color/color_primary"
-            android:text="@string/signActivity_signIn" />
+        <include layout="@layout/toolbar" />
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@id/signActivity_body"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/signActivity_header"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/list_singleline"
+            android:gravity="center_vertical"
+            android:text="@string/signActivity_signIn"
+            android:inputType="text"
+            android:textColor="@color/text_black_main"
+            android:textSize="@dimen/abc_text_size_title_material"/>
+
+        <TextView
+            android:id="@id/signActivity_username_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signActivity_name"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/abc_text_size_caption_material"
+            android:visibility="invisible"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/signActivity_name"
+            android:inputType="textPassword"
+            android:textSize="@dimen/abc_text_size_subhead_material"
+            android:textColorHint="@color/text_black_sub"/>
+
+        <TextView
+            android:id="@id/signActivity_password_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signActivity_passwrod"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/abc_text_size_caption_material"
+            android:visibility="invisible"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/signActivity_passwrod"
+            android:textSize="@dimen/abc_text_size_subhead_material"
+            android:textColorHint="@color/text_black_sub"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/list_singleline"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center_vertical"
+            android:text="@string/signActivity_signup_tips"
+            android:textSize="@dimen/abc_text_size_caption_material"
+            android:textColor="@color/color_primary"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@id/signActivity_footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_singleline"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:text="@string/signActivity_signUp"
-        android:textStyle="bold"
-        android:textColor="@color/color_primary_light"
-        android:textSize="@dimen/abc_text_size_caption_material"/>
+        android:background="@color/color_primary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:text="@string/signActivity_signIn"
+            android:textSize="@dimen/abc_text_size_body_1_material"
+            android:textColor="@color/text_white_main"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>

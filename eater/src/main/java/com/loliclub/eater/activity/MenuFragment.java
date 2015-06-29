@@ -60,7 +60,7 @@ public class MenuFragment extends Fragment {
 		titleList.add("tab3");
 		titleList.add("tab4");
 
-		List<String> menuList = new ArrayList<String>();
+		List<String> menuList = new ArrayList<>();
 		menuList.add("menu1");
 		menuList.add("menu2");
 		menuList.add("menu3");

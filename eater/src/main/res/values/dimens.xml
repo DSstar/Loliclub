@@ -10,6 +10,7 @@
     <dimen name="text_horizontal_margin">4dp</dimen>
     <dimen name="text_vertical_margin">4dp</dimen>
     <dimen name="button_raised_height">48dp</dimen>
+    <dimen name="button_raised_minwidth">88dp</dimen>
     <dimen name="divider_line">1dp</dimen>
     <dimen name="divider_double">16dp</dimen>
     <dimen name="list_singleline">48dp</dimen>

@@ -51,8 +51,10 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
+
         <service android:name=".services.NetworkService" >
         </service>
+
     </application>
 
 </manifest>

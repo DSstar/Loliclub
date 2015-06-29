@@ -4,13 +4,20 @@
     android:layout_height="match_parent"
     tools:context="com.loliclub.eater.activity.SignInActivity">
 
-    <View
-        android:id="@id/statusbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/status_bar_height"
-        android:background="@color/color_primary" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <include layout="@layout/toolbar" />
+        <View
+            android:id="@id/statusbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/status_bar_height"
+            android:background="@color/color_primary" />
+
+        <include layout="@layout/toolbar" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,16 +53,17 @@
             android:gravity="center_horizontal"
             android:textSize="@dimen/abc_text_size_subhead_material"
             android:hint="@string/signActivity_passwrod"
+            android:inputType="textPassword"
             android:textColor="@color/color_primary"
             android:textColorHint="@color/text_black_sub" />
 
         <Button
-            android:id="@id/signActivity_btn_signin"
+            android:id="@id/signActivity_btn_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:background="@color/color_primary"
-            android:text="@string/signActivity_signIn" />
+            android:text="@string/signActivity_signUp" />
 
     </LinearLayout>
 

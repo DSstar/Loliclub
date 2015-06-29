@@ -16,12 +16,16 @@ public class Eater extends BeanStandard {
 	
 	public String password;
 
+	public String headImg;
+
 	@Override
 	public String toString() {
 		return "Eater{" +
 				"id='" + id + '\'' +
 				", name='" + name + '\'' +
 				", password='" + password + '\'' +
+				", headImg='" + headImg + '\'' +
 				'}';
 	}
+
 }

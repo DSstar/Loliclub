@@ -41,12 +41,26 @@
     <!--signInActivity & signUpActivity-->
     <item name="signActivity_userHead" type="id"></item>
     <item name="signActivity_username" type="id"></item>
+    <item name="signActivity_username_label" type="id"></item>
     <item name="signActivity_password" type="id"></item>
+    <item name="signActivity_password_label" type="id"></item>
     <item name="signActivity_btn_signin" type="id"></item>
     <item name="signActivity_btn_signup" type="id"></item>
+    <item name="signActivity_header" type="id"></item>
+    <item name="signActivity_body" type="id"></item>
+    <item name="signActivity_footer" type="id"></item>
 
     <!-- aboutFragment -->
     <item name="aboutActivity_version" type="id"></item>
+
+    <!--adminActivity-->
+    <item name="adminActivity_restaurant_name" type="id"></item>
+    <item name="adminActivity_restaurant_phone_number" type="id"></item>
+    <item name="adminActivity_meat_name" type="id"></item>
+    <item name="adminActivity_meat_price" type="id"></item>
+    <item name="adminActivity_meat_categroy" type="id"></item>
+    <item name="adminActivity_btn_restaurant_submit" type="id"></item>
+    <item name="adminActivity_btn_meat_submit" type="id"></item>
 
     <!--Dialog-->
     <item name="dialog_username" type="id"></item>

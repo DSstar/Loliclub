@@ -1,11 +1,12 @@
 package com.loliclub.eater.activity;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.loliclub.eater.R;
 
@@ -27,6 +28,13 @@ public class SignInActivity extends AppCompatActivity {
      * 初始化参数
      */
     private void initParams() {
+
+    }
+
+    /**
+     * 初始化UI
+     */
+    private void initUI() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
         // 初始化Toolbar
@@ -36,17 +44,15 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     /**
-     * 初始化UI
-     */
-    private void initUI() {
-
-    }
-
-    /**
      * 初始化事件处理
      */
     private void initEvent() {
-
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     @Override
@@ -64,10 +70,12 @@ public class SignInActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

@@ -166,44 +166,66 @@
 
             </LinearLayout>
 
-            <TextView
+            <LinearLayout
                 android:id="@id/navigation_setting"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/list_singleline"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:onClick="onNavigationItemClick"
-                android:gravity="center_vertical"
                 android:background="@color/nocolor"
-                android:text="@string/navigation_setting"
-                android:textSize="@dimen/abc_text_size_subhead_material"
-                android:textColor="@color/text_black_main"/>
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/navigation_setting"
+                    android:textSize="@dimen/abc_text_size_subhead_material"
+                    android:textColor="@color/text_black_main"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:id="@id/navigation_admin"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/list_singleline"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:onClick="onNavigationItemClick"
-                android:gravity="center_vertical"
                 android:background="@color/nocolor"
-                android:text="@string/navigation_admin"
-                android:textSize="@dimen/abc_text_size_subhead_material"
-                android:textColor="@color/text_black_main"/>
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/navigation_admin"
+                    android:textSize="@dimen/abc_text_size_subhead_material"
+                    android:textColor="@color/text_black_main"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@id/navigation_about"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/list_singleline"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:onClick="onNavigationItemClick"
-                android:gravity="center_vertical"
                 android:background="@color/nocolor"
-                android:text="@string/navigation_about"
-                android:textSize="@dimen/abc_text_size_subhead_material"
-                android:textColor="@color/text_black_main"/>
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/navigation_about"
+                    android:textSize="@dimen/abc_text_size_subhead_material"
+                    android:textColor="@color/text_black_main"/>
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
