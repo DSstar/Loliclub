@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    tools:context="com.loliclub.bluetoothtools.activity.AboutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:src="@mipmap/ic_app"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_vertical_margin"
+            android:textSize="@dimen/abc_text_size_subhead_material"
+            android:textColor="@color/primary"
+            android:text="@string/text_about"/>
+
+        <TextView
+            android:id="@id/about_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_vertical_margin"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/caption"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/caption"
+        android:text="@string/copy_right"/>
+
+</RelativeLayout>

@@ -1,1 +1,1 @@
-include ':app', ':eater'
+include ':app', ':eater', ':bluetoothtools'

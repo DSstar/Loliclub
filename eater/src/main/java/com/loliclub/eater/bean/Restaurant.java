@@ -50,7 +50,7 @@ public class Restaurant extends BeanStandard {
 
 	@Override
 	public void setDefault(int type) {
-		this.id = BeanUtil.generateId();
+		this.id = BeanUtil.generateId().substring(0,8);
 	}
 
 	@Override

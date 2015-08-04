@@ -2,39 +2,53 @@
 <items version="2" >
 
     <item
-        jar="F:\AndroidProject\Loliclub\eater\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\jars\classes.jar"
+        jar="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="F:\AndroidProject\Loliclub\eater\build\intermediates\pre-dexed\debug\classes-f78fcfef8970b53aef52d0fbe276bf6f548d9710.jar" />
+        revision="23.0.0 rc3"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\pre-dexed\debug\classes-4e66af308013f94524f9bbabd4cd8e3ecf5864a9.jar" />
     </item>
     <item
-        jar="F:\AndroidProject\Loliclub\eater\libs\Java-WebSocket-1.3.0.jar"
+        jar="C:\Users\志华\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="db2658f013fb163de4a99274c2eb9e17efe535d2">
-        <dex dex="F:\AndroidProject\Loliclub\eater\build\intermediates\pre-dexed\debug\Java-WebSocket-1.3.0-2d21564bbfff08e3645ba88d6acd7b3e2ca83a93.jar" />
+        revision="23.0.0 rc3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\pre-dexed\debug\library-2.4.0-ab18fb1ecb47738380944bbdcd924c54b4bd9642.jar" />
     </item>
     <item
-        jar="F:\AndroidProject\Loliclub\eater\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jar="F:\AndroidProject\Loliclub\bluetoothtools\libs\lifesense_ble.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="F:\AndroidProject\Loliclub\eater\build\intermediates\pre-dexed\debug\classes-3b338d0e3210fda369ea2602443c8895531a69ea.jar" />
+        revision="23.0.0 rc3"
+        sha1="1eec5074d9c93ca009ade0cf97a3aaed25543ba9">
+        <dex dex="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\pre-dexed\debug\lifesense_ble-3b2b02e1e8465140d18178764c4e5fdaad1a2452.jar" />
     </item>
     <item
-        jar="D:\adt-bundle-windows-x86_64-20140702\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jar="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="F:\AndroidProject\Loliclub\eater\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-033c6984a357a72562efdef7ab6a4b57873a3b35.jar" />
+        revision="23.0.0 rc3"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\pre-dexed\debug\classes-f0c2de541bc9a2a3af5344ce021255d5d5804b40.jar" />
     </item>
     <item
-        jar="F:\AndroidProject\Loliclub\eater\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
+        jar="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="F:\AndroidProject\Loliclub\eater\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-de8a3d87804ed2cc35d7fe73ba3c92a5f548ac0d.jar" />
+        revision="23.0.0 rc3"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-85f226675d3dd9f60b6b9874e366dba294c63112.jar" />
+    </item>
+    <item
+        jar="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\exploded-aar\com.rengwuxian.materialedittext\library\2.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="288913b440a3c61c30aa171095453a605432277a">
+        <dex dex="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\pre-dexed\debug\classes-49d2cfeb3a00a40734367286842e922c166571ce.jar" />
+    </item>
+    <item
+        jar="D:\Users\志华\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="F:\AndroidProject\Loliclub\bluetoothtools\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-6c4711121dff5fdf5d0b80807f9d8d5b7f988e9b.jar" />
     </item>
 
 </items>

@@ -59,16 +59,11 @@
     <!--aboutActivity-->
     <string name="aboutActivity_about">If you have any suggestion,please tell me.By the way, I will not modify at all.←_←</string>
 
-    <!--adminActivity-->
-    <string name="adminActivity_restaurant">Restaurant</string>
-    <string name="adminActivity_restaurant_name">Restaurant name</string>
-    <string name="adminActivity_restaurant_phone">Restaurant PhoneNumber</string>
-    <string name="adminActivity_meat">Meat</string>
-    <string name="adminActivity_meat_name">Meat name</string>
-    <string name="adminActivity_meat_price">Meat Price</string>
-    <string name="adminActivity_meat_category">Category</string>
-
     <!--tips-->
     <string name="tips_notFinish">Have not finish</string>
+    <string name="title_activity_manager">ManagerActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

@@ -1,0 +1,81 @@
+<resources>
+    <!--common-->
+    <string name="app_name">Bluetooth Tools</string>
+    <string name="copy_right">Copyright© 2015 LoliClub</string>
+    <string name="text_about">Bluetooth Tools for Transtek</string>
+    <string name="more">More</string>
+    <string name="ok">OK</string>
+    <string name="connected">connected</string>
+    <string name="disconnected">disconnected</string>
+    <string name="tips_dont_open_bt">You have not open the Bluetooth,please open the Bluetooth and try again.</string>
+    <string name="tips_dont_support_ble">You have not open the Bluetooth,please open the Bluetooth and try again.</string>
+
+    <!--DeviceInfo-->
+    <string name="device_info">DeviceInfo</string>
+    <string name="device_name">DeviceName</string>
+    <string name="device_id">DeviceId</string>
+    <string name="device_sn">DeviceSn</string>
+    <string name="delete_device">Delete Device</string>
+    <string name="measure_data">MeasureData</string>
+    <string name="no_data">NoData</string>
+
+    <!--scanActivity-->
+    <string name="scanning">Scanning...</string>
+    <string name="scanning_fail">Scan device fail</string>
+    <string name="bluetooth_pair">Bluetooth Pair</string>
+    <string name="pair_with">Pair with %s...</string>
+    <string name="select_user">Select User...</string>
+    <string name="select_user_number">Select User%s</string>
+    <string name="pair_fail">Pair with %s fail</string>
+    <string name="pair_success">Pair with %s successed</string>
+
+    <!--userActivity-->
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="sex">Sex</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="step_goal">Step Goal</string>
+    <string name="weight_goal">Weight Goal</string>
+    <string name="use_24hour_model">Use 24Hour Model</string>
+    <string name="weight_unit">Weight Unit</string>
+    <string name="distance_unit">Distance Unit</string>
+    <string name="unit_cm">CM</string>
+    <string name="unit_km">KM</string>
+    <string name="unit_ft">FT</string>
+    <string name="unit_kg">KG</string>
+    <string name="unit_lb">LB</string>
+
+    <!--ScanSetting-->
+    <string name="pair_model_only">Pair model only</string>
+    <string name="enable_pedometer">Enable Pedometer</string>
+    <string name="enable_Scale">Enable Scale</string>
+    <string name="enable_BloodPressure">Enable BloodPressure</string>
+    <string name="enable_HeightRuler">Enable HeightRuler</string>
+
+    <!--menu-->
+    <string name="action_scan_settings">Scan Settings</string>
+    <string name="action_user_settings">User Settings</string>
+    <string name="action_clear_data">Clear Data</string>
+    <string name="action_about">About</string>
+    <string name="action_scan">Scan</string>
+
+    <!--title-->
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_scan">ScanActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_scan_setting">ScanSettingActivity</string>
+    <string name="title_activity_user_setting">UserSettingActivity</string>
+
+    <string-array name="unit_height">
+        <item>CM</item>
+        <item>FT</item>
+    </string-array>
+
+    <string-array name="unit_weight">
+        <item>KG</item>
+        <item>LB</item>
+    </string-array>
+
+</resources>

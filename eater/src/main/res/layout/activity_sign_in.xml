@@ -34,7 +34,6 @@
             android:layout_height="@dimen/list_singleline"
             android:gravity="center_vertical"
             android:text="@string/signActivity_signIn"
-            android:inputType="text"
             android:textColor="@color/text_black_main"
             android:textSize="@dimen/abc_text_size_title_material"/>
 
@@ -48,11 +47,15 @@
             android:visibility="invisible"/>
 
         <EditText
+            android:id="@id/signActivity_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
             android:hint="@string/signActivity_name"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:textSize="@dimen/abc_text_size_subhead_material"
+            android:textColor="@color/text_black_main"
             android:textColorHint="@color/text_black_sub"/>
 
         <TextView
@@ -65,13 +68,18 @@
             android:visibility="invisible"/>
 
         <EditText
+            android:id="@id/signActivity_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
             android:hint="@string/signActivity_passwrod"
+            android:inputType="textPassword"
             android:textSize="@dimen/abc_text_size_subhead_material"
             android:textColorHint="@color/text_black_sub"/>
 
         <TextView
+            android:id="@id/signActivity_btn_signup"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/list_singleline"
             android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -91,13 +99,14 @@
         android:background="@color/color_primary">
 
         <TextView
+            android:id="@id/signActivity_btn_signin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:text="@string/signActivity_signIn"
-            android:textSize="@dimen/abc_text_size_body_1_material"
+            android:textSize="@dimen/abc_text_size_subhead_material"
             android:textColor="@color/text_white_main"/>
 
     </RelativeLayout>

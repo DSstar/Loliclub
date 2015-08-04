@@ -53,15 +53,6 @@
     <!-- aboutFragment -->
     <item name="aboutActivity_version" type="id"></item>
 
-    <!--adminActivity-->
-    <item name="adminActivity_restaurant_name" type="id"></item>
-    <item name="adminActivity_restaurant_phone_number" type="id"></item>
-    <item name="adminActivity_meat_name" type="id"></item>
-    <item name="adminActivity_meat_price" type="id"></item>
-    <item name="adminActivity_meat_categroy" type="id"></item>
-    <item name="adminActivity_btn_restaurant_submit" type="id"></item>
-    <item name="adminActivity_btn_meat_submit" type="id"></item>
-
     <!--Dialog-->
     <item name="dialog_username" type="id"></item>
     <item name="dialog_password" type="id"></item>
@@ -75,6 +66,7 @@
     <item name="item_title" type="id"></item>
     <item name="item_subtitle" type="id"></item>
     <item name="item_tips" type="id"></item>
+    <item name="item_content" type="id"></item>
     <item name="item_rigntBtn" type="id"></item>
 
 </resources>

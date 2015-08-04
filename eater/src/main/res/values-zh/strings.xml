@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- common -->
+    <string name="app_name">乐心吃货</string>
+    <string name="team_info">LoliClub</string>
+    <string name="no_function">人家还没做这个功能了啦！</string>
+    <string name="copy_right">Copyright ©2015 Loliclub. All Rights Reserved</string>
+    <string name="submit">提交</string>
+
+    <!--title-->
+    <string name="title_activity_eater">吃货信息</string>
+    <string name="title_activity_menu">菜单</string>
+    <string name="title_activity_order">订单</string>
+    <string name="title_activity_Analysis">分析</string>
+    <string name="title_activity_Chat">聊天</string>
+    <string name="title_activity_Setting">设置</string>
+    <string name="title_activity_about">关于</string>
+    <string name="title_activity_sign_up">注册</string>
+    <string name="title_activity_sign_in">登录</string>
+    <string name="title_activity_admin">管理员</string>
+
+    <!-- menu -->
+    <string name="action_search">搜索</string>
+    <string name="action_eaterinfo">吃货信息</string>
+    <string name="action_list">菜单</string>
+    <string name="action_about">关于</string>
+    <string name="action_edit">编辑</string>
+
+    <!--navigationFragment-->
+    <string name="navigation_signTitle">登录或注册</string>
+    <string name="navigation_menu">菜单</string>
+    <string name="navigation_order">订单</string>
+    <string name="navigation_analysis">分析</string>
+    <string name="navigation_chat">聊天</string>
+    <string name="navigation_setting">设置</string>
+    <string name="navigation_admin">管理员</string>
+    <string name="navigation_about">关于</string>
+
+    <!--signActivity-->
+    <string name="signActivity_welcome">欢迎</string>
+    <string name="signActivity_welcome_back">欢迎回来</string>
+    <string name="signActivity_signup_tips">我还没有账号</string>
+    <string name="signActivity_name">用户名</string>
+    <string name="signActivity_passwrod">密码</string>
+    <string name="signActivity_signIn">登录</string>
+    <string name="signActivity_signUp">注册</string>
+    <string name="signActivity_showPassword">显示密码</string>
+    <string name="signActivity_noSigninTip">你还没有登录到乐心吃货, 请登陆以完成订单或%s</string>
+    
+    <!--listViewItem-->
+
+    <!--aboutActivity-->
+    <string name="aboutActivity_about">如果你有什么意见就尽管提吧，反正我是不会改的，←_←</string>
+
+    <!--tips-->
+    <string name="tips_notFinish">尚未完成</string>
+
+</resources>

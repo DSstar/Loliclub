@@ -19,6 +19,7 @@
     <dimen name="list_singleline_img">40dp</dimen>
     <dimen name="list_singleline_icon">24dp</dimen>
     <dimen name="list_doubleline">72dp</dimen>
+    <dimen name="list_text_margin_left">72dp</dimen>
     <dimen name="cards_radius">2dp</dimen>
     <dimen name="chilp_text_twoline_height">72dp</dimen>
     <dimen name="button_flat">56dp</dimen>

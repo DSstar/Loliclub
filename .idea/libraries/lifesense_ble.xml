@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="lifesense_ble">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bluetoothtools/libs/lifesense_ble.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

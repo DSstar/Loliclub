@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:elevation="@dimen/elevation_first"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dialog_text_margin">
+
+        <TextView
+            android:id="@id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:textSize="@dimen/abc_text_size_title_material"
+            android:textColor="@color/text_black_main"/>
+
+        <TextView
+            android:id="@id/dialog_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/abc_text_size_caption_material"
+            android:textColor="@color/text_black_sub"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@id/dialog_btn_negative"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_raised_height"
+            android:minWidth="@dimen/button_raised_minwidth"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@null"
+            android:textSize="@dimen/abc_text_size_subhead_material"
+            android:textColor="@color/text_black_main"/>
+
+        <Button
+            android:id="@id/dialog_btn_positive"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_raised_height"
+            android:minWidth="@dimen/button_raised_minwidth"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@null"
+            android:textSize="@dimen/abc_text_size_subhead_material"
+            android:textColor="@color/primary"/>
+
+    </LinearLayout>
+
+</LinearLayout>

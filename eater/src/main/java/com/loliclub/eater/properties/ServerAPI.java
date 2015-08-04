@@ -131,7 +131,7 @@ public class ServerAPI {
 			e.printStackTrace();
 			callBack.onFailure(e, "");
 		}
-		HttpClient.getInstance().post(UrlBuilder.URL_SIGNIN, params, jsonObj, callBack);
+		HttpClient.post(UrlBuilder.URL_SIGNIN, params, jsonObj, callBack);
 	}
 
 	/**
@@ -243,7 +243,7 @@ public class ServerAPI {
 	public static void logout(String sessionId, final HttpClientResponseHandler cback){
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("sessionId", sessionId);
-		HttpClient.getInstance().get(UrlBuilder.URL_LOGOUT, params, null, cback);
+		HttpClient.get(UrlBuilder.URL_LOGOUT, params, null, cback);
 	}
 	
 	/**
@@ -503,7 +503,7 @@ public class ServerAPI {
 		params.put("timestamp", timestamp);
 		params.put("nonce", nonce);
 		params.put("sessionId", sessionId);
-		HttpClient.getInstance().post(UrlBuilder.URL_ADDDEVICE, params, restaurant, callback);
+		HttpClient.post(UrlBuilder.URL_ADDDEVICE, params, restaurant, callback);
 	}
 
 	/**
@@ -814,7 +814,7 @@ public class ServerAPI {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		HttpClient.getInstance().post(UrlBuilder.URL_DOWNLOAD, params, jsonObj, cback);
+		HttpClient.post(UrlBuilder.URL_DOWNLOAD, params, jsonObj, cback);
 	}
 	
 	/**

@@ -17,7 +17,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
@@ -26,27 +25,21 @@ import android.util.Log;
  * 
  */
 public class HttpClient {
-	
-	private static final int CONNECT_TIMEOUT = 10000;
-	private static final int RESPONSE_TIMEOUT = 10000;
-	
-	private ThreadPoolExecutor threadPool;
-	
-	private static HttpClient client;
 
-	private HttpClient() {
-		threadPool = (ThreadPoolExecutor)Executors.newCachedThreadPool();
-	}
-	
-	private static synchronized void syncInit() {
-		if (client == null)
-			client = new HttpClient();
-	}
-	
-	public static synchronized HttpClient getInstance() {
-		syncInit();
-		return client;
-	}
+	/**
+	 * 连接超时时长
+	 */
+	private static final int CONNECT_TIMEOUT = 10000;
+
+	/**
+	 * 响应超时时长
+	 */
+	private static final int RESPONSE_TIMEOUT = 10000;
+
+	/**
+	 * 线程池
+	 */
+	private static ThreadPoolExecutor threadPool = (ThreadPoolExecutor)Executors.newCachedThreadPool();
 
 	/**
 	 * get 方法
@@ -55,7 +48,7 @@ public class HttpClient {
 	 * @param jsonObj 请求参数，通过流
 	 * @param responseHandler 回调方法
 	 */
-	public void get(final String url, @Nullable final Map<String, String> params,
+	public static void get(final String url, @Nullable final Map<String, String> params,
 					@Nullable final JSONObject jsonObj, final HttpClientResponseHandler responseHandler) {
 		if (responseHandler == null)
 			return;
@@ -140,7 +133,7 @@ public class HttpClient {
 	 * @param jsonObj 请求参数，通过流传输
 	 * @param responseHandler 回调方法
 	 */
-	public void post(final String url, @Nullable final Map<String, String> params,
+	public static void post(final String url, @Nullable final Map<String, String> params,
 					 @Nullable final JSONObject jsonObj, final HttpClientResponseHandler responseHandler) {
 		if (responseHandler == null)
 			return;

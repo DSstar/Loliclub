@@ -11,10 +11,14 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
+import com.loliclub.dbhelper.database.DatabaseHelper;
+import com.loliclub.dbhelper.database.DatabaseService;
 import com.loliclub.eater.R;
+import com.loliclub.eater.bean.Restaurant;
+import com.loliclub.eater.beanservices.MenuService;
+import com.loliclub.eater.beanservices.RestaurantService;
+import com.loliclub.eater.properties.MyDatabaseHandler;
 import com.loliclub.eater.view.MenuFragmentPagerAdapter;
 
 public class MenuFragment extends Fragment {
@@ -22,9 +26,11 @@ public class MenuFragment extends Fragment {
 	private ViewPager mViewPager;
 	private PagerTabStrip mPagerTabStrip;
 
+	private DatabaseHelper databaseHelper;
 
 	private List<String> titleList;
 	private List<Fragment> viewList;
+	private Restaurant restaurant;
 
 	public MenuFragment(){
 		super();
@@ -51,26 +57,25 @@ public class MenuFragment extends Fragment {
 		titleList = new ArrayList<String>();
 		viewList = new ArrayList<Fragment>();
 
+		databaseHelper = DatabaseService.connectDatabase(getActivity(), MyDatabaseHandler.getInstance());
+
 		/**
 		 * 初始化加载数据
 		 */
-
-		titleList.add("tab1");
-		titleList.add("tab2");
-		titleList.add("tab3");
-		titleList.add("tab4");
-
-		List<String> menuList = new ArrayList<>();
-		menuList.add("menu1");
-		menuList.add("menu2");
-		menuList.add("menu3");
-		menuList.add("menu4");
-		menuList.add("menu5");
-
-//		viewList.add(MenuFragment.newInstance(menuList));
-//		viewList.add(MenuFragment.newInstance(menuList));
-//		viewList.add(MenuFragment.newInstance(menuList));
-//		viewList.add(MenuFragment.newInstance(menuList));
+		// 加载餐厅数据
+		RestaurantService restaurantService = new RestaurantService(databaseHelper.getReadableDatabase());
+		List<Restaurant> list = restaurantService.execQuery(null, null);
+		if (list != null && list.size() > 0)
+			restaurant = list.get(0);
+		// 加载菜单标题
+		if (restaurant != null) {
+			MenuService menuService = new MenuService(databaseHelper.getReadableDatabase());
+			titleList = menuService.queryCaregory(restaurant.id);
+			if (titleList != null && titleList.size() > 0)
+				for (String title : titleList) {
+					viewList.add(MenuListFragment.newInstance(restaurant.id, title));
+				}
+		}
 
 	}
 

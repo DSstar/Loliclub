@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.loliclub.bluetoothtools.activity.ScanSettingActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_singleline_with_icon"
+        android:layout_marginTop="@dimen/view_vertical_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/subhead"
+            android:textColor="@color/text_black_main"
+            android:text="@string/pair_model_only"/>
+
+        <ImageView
+            android:id="@id/scan_setting_pair_only"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/list_singleline_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:src="@mipmap/ic_switch_on"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_singleline_with_icon">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/subhead"
+            android:textColor="@color/text_black_main"
+            android:text="@string/enable_pedometer"/>
+
+        <ImageView
+            android:id="@id/scan_setting_enable_pedometer"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/list_singleline_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:src="@mipmap/ic_switch_on"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_singleline_with_icon">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/subhead"
+            android:textColor="@color/text_black_main"
+            android:text="@string/enable_BloodPressure"/>
+
+        <ImageView
+            android:id="@id/scan_setting_enable_bloodpressure"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/list_singleline_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:src="@mipmap/ic_switch_on"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_singleline_with_icon">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/subhead"
+            android:textColor="@color/text_black_main"
+            android:text="@string/enable_Scale"/>
+
+        <ImageView
+            android:id="@id/scan_setting_enable_scale"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/list_singleline_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:src="@mipmap/ic_switch_on"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_singleline_with_icon">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/subhead"
+            android:textColor="@color/text_black_main"
+            android:text="@string/enable_HeightRuler"/>
+
+        <ImageView
+            android:id="@id/scan_setting_enable_height_ruler"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/list_singleline_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:src="@mipmap/ic_switch_on"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    tools:context="com.loliclub.bluetoothtools.activity.ScanActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:id="@id/scan_rl_show"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_Area_height"
+        android:layout_marginTop="@dimen/toolbar"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:background="@color/primary">
+
+        <ImageView
+            android:layout_width="@dimen/list_doubleline"
+            android:layout_height="@dimen/list_doubleline"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_bt_normal_white"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="@dimen/button_flat"
+        android:layout_height="@dimen/button_flat"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/scan_rl_show"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="-28dp"
+        android:src="@mipmap/btn_reflash_normal"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </ScrollView>
+
+</RelativeLayout>

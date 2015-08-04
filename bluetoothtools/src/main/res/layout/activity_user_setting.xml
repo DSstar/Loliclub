@@ -1,0 +1,356 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.loliclub.bluetoothtools.activity.UserSettingActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/view_vertical_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@id/user_setting_et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                android:textSize="@dimen/abc_text_size_subhead_material"
+                android:inputType="text"
+                app:met_floatingLabel="normal"
+                app:met_baseColor="@color/text_black_main"
+                app:met_primaryColor="@color/primary"
+                app:met_textColorHint="@color/text_black_sub"
+                app:met_singleLineEllipsis="true"
+                app:met_clearButton="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@id/user_setting_et_age"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:hint="@string/age"
+                    android:textSize="@dimen/abc_text_size_subhead_material"
+                    android:layout_marginEnd="@dimen/view_horizontal_margin"
+                    android:inputType="number"
+                    app:met_baseColor="@color/text_black_main"
+                    app:met_floatingLabel="normal"
+                    app:met_primaryColor="@color/primary"
+                    app:met_textColorHint="@color/text_black_sub"
+                    app:met_singleLineEllipsis="true" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_horizontal_margin"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/view_vertical_margin"
+                        android:paddingTop="@dimen/text_vertical_margin"
+                        android:text="@string/sex"
+                        android:textColor="@color/text_black_sub"
+                        android:textSize="@dimen/abc_text_size_caption_material" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@id/user_setting_sex_man"
+                            android:layout_width="@dimen/list_singleline_icon"
+                            android:layout_height="@dimen/list_singleline_icon"
+                            android:layout_marginEnd="@dimen/view_horizontal_margin"
+                            android:background="@drawable/btn_man_selector"
+                            android:button="@null" />
+
+                        <RadioButton
+                            android:id="@id/user_setting_sex_woman"
+                            android:layout_width="@dimen/list_singleline_icon"
+                            android:layout_height="@dimen/list_singleline_icon"
+                            android:layout_marginStart="@dimen/view_horizontal_margin"
+                            android:background="@drawable/btn_woman_selector"
+                            android:button="@null" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/view_horizontal_margin"
+                    android:layout_weight="1.0"
+                    android:orientation="horizontal">
+
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@id/user_setting_et_height"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:hint="@string/height"
+                        android:textSize="@dimen/abc_text_size_subhead_material"
+                        android:inputType="numberDecimal"
+                        app:met_baseColor="@color/text_black_main"
+                        app:met_floatingLabel="normal"
+                        app:met_primaryColor="@color/primary"
+                        app:met_textColorHint="@color/text_black_sub"
+                        app:met_singleLineEllipsis="true" />
+
+                    <Spinner
+                        android:id="@id/user_setting_spinner_height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/view_horizontal_margin"
+                        android:entries="@array/unit_height" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/view_horizontal_margin"
+                    android:layout_weight="1.0"
+                    android:orientation="horizontal">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@id/user_setting_et_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:hint="@string/weight"
+                        android:textSize="@dimen/abc_text_size_subhead_material"
+                        android:inputType="numberDecimal"
+                        app:met_baseColor="@color/text_black_main"
+                        app:met_floatingLabel="normal"
+                        app:met_primaryColor="@color/primary"
+                        app:met_textColorHint="@color/text_black_sub"
+                        app:met_singleLineEllipsis="true" />
+
+                        <Spinner
+                            android:id="@id/user_setting_spinner_weight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/view_horizontal_margin"
+                            android:entries="@array/unit_weight" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@id/user_setting_et_step_goal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:layout_marginEnd="@dimen/view_horizontal_margin"
+                    android:hint="@string/step_goal"
+                    android:textSize="@dimen/abc_text_size_subhead_material"
+                    android:inputType="number"
+                    app:met_baseColor="@color/text_black_main"
+                    app:met_floatingLabel="normal"
+                    app:met_primaryColor="@color/primary"
+                    app:met_textColorHint="@color/text_black_sub"
+                    app:met_singleLineEllipsis="true" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/view_horizontal_margin"
+                    android:layout_weight="1.0"
+                    android:orientation="horizontal">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@id/user_setting_et_weight_goal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:hint="@string/weight_goal"
+                        android:textSize="@dimen/abc_text_size_subhead_material"
+                        app:met_baseColor="@color/text_black_main"
+                        android:inputType="numberDecimal"
+                        app:met_floatingLabel="normal"
+                        app:met_primaryColor="@color/primary"
+                        app:met_textColorHint="@color/text_black_sub"
+                        app:met_singleLineEllipsis="true" />
+
+                        <Spinner
+                            android:id="@id/user_setting_spinner_weight_goal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/view_horizontal_margin"
+                            android:entries="@array/unit_weight" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_singleline_with_icon"
+                android:layout_marginTop="@dimen/view_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/use_24hour_model"
+                    android:textColor="@color/text_black_main"
+                    android:textSize="@dimen/subhead" />
+
+                <ImageView
+                    android:id="@id/user_setting_switch_24_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/list_singleline_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/use_24hour_model"
+                    android:src="@mipmap/ic_switch_on" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_singleline_with_img"
+                android:layout_marginTop="@dimen/view_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/weight_unit"
+                    android:textColor="@color/text_black_main"
+                    android:textSize="@dimen/subhead" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@id/user_setting_unit_kg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_unit_left_selector"
+                        android:button="@null"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/unit_kg"
+                        android:textColor="@color/text_white_main"
+                        android:textSize="@dimen/subhead" />
+
+                    <RadioButton
+                        android:id="@id/user_setting_unit_lb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_unit_right_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/unit_lb"
+                        android:textColor="@color/text_white_main"
+                        android:textSize="@dimen/subhead" />
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_singleline_with_img"
+                android:layout_marginTop="@dimen/view_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/distance_unit"
+                    android:textColor="@color/text_black_main"
+                    android:textSize="@dimen/subhead" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@id/user_setting_unit_km"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_unit_left_selector"
+                        android:button="@null"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/unit_km"
+                        android:textColor="@color/text_white_main"
+                        android:textSize="@dimen/subhead" />
+
+                    <RadioButton
+                        android:id="@id/user_setting_unit_ft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_unit_right_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/unit_ft"
+                        android:textColor="@color/text_white_main"
+                        android:textSize="@dimen/subhead" />
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

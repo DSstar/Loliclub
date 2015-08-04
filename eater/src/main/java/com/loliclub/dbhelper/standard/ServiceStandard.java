@@ -30,9 +30,6 @@ import com.loliclub.dbhelper.util.BeanUtil;
  */
 public abstract class ServiceStandard<T extends IBeanStandard> implements
 		IServiceStandard<T> {
-
-	public static final String TAG = "ServiceStandard";
-
 	/**
 	 * 数据库对象
 	 */
@@ -53,7 +50,7 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 
 	/**
 	 * 获取数据库对象
-	 * @return
+	 * @return 数据库对象
 	 */
 	protected SQLiteDatabase getDataBase() {
 		return this.database;
@@ -67,11 +64,7 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 		}
 		try {
 			ContentValues contentValues = getContentValues(bean);
-			if (database.insert(bean.getClass().getSimpleName(), null,
-					contentValues) < 0)
-				return false;
-			else
-				return true;
+			return (database.insert(bean.getClass().getSimpleName(), null, contentValues) > 0);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 			return false;
@@ -115,11 +108,7 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 		}
 		try {
 			ContentValues contentValues = getContentValues(bean);
-			if (database.replace(bean.getClass().getSimpleName(), null,
-					contentValues) < 0)
-				return false;
-			else
-				return true;
+			return  (database.replace(bean.getClass().getSimpleName(), null, contentValues) > 0);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 			return false;
@@ -179,11 +168,8 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 		try {
 			whereArgs[0] = String.valueOf(value.get(bean));
 			ContentValues contentValues = getContentValuesWithoutId(bean);
-			if (database.update(bean.getClass().getSimpleName(), contentValues,
-					whereClause, whereArgs) <= 0)
-				return false;
-			else
-				return true;
+			return (database.update(bean.getClass().getSimpleName(), contentValues,
+					whereClause, whereArgs) > 0);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 			return false;
@@ -259,11 +245,8 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 		String[] whereArgs = new String[1];
 		try {
 			whereArgs[0] = String.valueOf(value.get(bean));
-			if (database.delete(bean.getClass().getSimpleName(), whereClause,
-					whereArgs) == 0)
-				return false;
-			else
-				return true;
+			return (database.delete(bean.getClass().getSimpleName(), whereClause,
+					whereArgs) > 0);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 			return false;
@@ -361,19 +344,17 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 			new DatabaseException("The com.loliclub.dbhelper.database is null").printStackTrace();
 			return null;
 		}
-		if (where == null || "".equals(where)) {
-			new DatabaseException("The parameters is null").printStackTrace();
-			return null;
-		}
-		StringBuffer sql = new StringBuffer();
+		StringBuilder sql = new StringBuilder();
 		sql.append("select * from ");
 		sql.append(entityClass.getSimpleName());
-		sql.append(" where ");
-		sql.append(where);
+		if (where != null && !"".equals(where)) {
+			sql.append(" where ");
+			sql.append(where);
+		}
 		Cursor cursor = database.rawQuery(sql.toString(), whereArgs);
 		if (cursor == null || cursor.getCount() <= 0)
 			return null;
-		List<T> list = new ArrayList<T>();
+		List<T> list = new ArrayList<>();
 		while (cursor.moveToNext()) {
 			try {
 				T bean = entityClass.newInstance();
@@ -402,7 +383,7 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 		Cursor cursor = database.rawQuery(sql, whereArgs);
 		if (cursor == null || cursor.getCount() <= 0)
 			return null;
-		List<T> list = new ArrayList<T>();
+		List<T> list = new ArrayList<>();
 		while (cursor.moveToNext()) {
 			try {
 				T bean = entityClass.newInstance();
@@ -436,7 +417,7 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 	 * 
 	 * @param bean
 	 *            需要解析IBeanStandard对象
-	 * @return
+	 * @return 返回属性结合
 	 */
 	protected ContentValues getContentValuesWithoutId(T bean)
 			throws IllegalAccessException {
@@ -445,13 +426,13 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 		ContentValues contentValues = new ContentValues();
 		Field[] fieldArray = bean.getClass().getFields();
 		for (Field field : fieldArray) {
-			if (field.isAnnotationPresent(primaryKey.class))
-				continue;
-			else if (field.isAnnotationPresent(without.class))
-				continue;
-			else if (Modifier.isStatic(field.getModifiers())
+			if (field.isAnnotationPresent(primaryKey.class)){
+
+			}else if (field.isAnnotationPresent(without.class)) {
+
+			} else if (Modifier.isStatic(field.getModifiers())
 					|| Modifier.isFinal(field.getModifiers())) {
-				continue;
+
 			} else {
 				if (field.getModifiers() == Modifier.STATIC)
 					continue;
@@ -475,8 +456,6 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 				} else if ("java.com.loliclub.dbhelper.util.Date".equals(field.getType().getName())) {
 					contentValues.put(field.getName(),
 							BeanUtil.dateToString((Date) field.get(bean)));
-				} else {
-					continue;
 				}
 			}
 		}
@@ -488,7 +467,7 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 	 * 
 	 * @param bean
 	 *            需要解析IBeanStandard对象
-	 * @return
+	 * @return 返回属性集合
 	 */
 	protected ContentValues getContentValues(T bean)
 			throws IllegalAccessException {
@@ -497,11 +476,11 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 		ContentValues contentValues = new ContentValues();
 		Field[] fieldArray = bean.getClass().getFields();
 		for (Field field : fieldArray) {
-			if (field.isAnnotationPresent(without.class))
-				continue;
-			else if (Modifier.isStatic(field.getModifiers())
+			if (field.isAnnotationPresent(without.class)) {
+
+			} else if (Modifier.isStatic(field.getModifiers())
 					|| Modifier.isFinal(field.getModifiers())) {
-				continue;
+
 			} else {
 				if ("boolean".equals(field.getType().getName())) {
 					contentValues.put(field.getName(), field.getBoolean(bean));
@@ -523,8 +502,6 @@ public abstract class ServiceStandard<T extends IBeanStandard> implements
 				} else if ("java.com.loliclub.dbhelper.util.Date".equals(field.getType().getName())) {
 					contentValues.put(field.getName(),
 							BeanUtil.dateToString((Date) field.get(bean)));
-				} else {
-					continue;
 				}
 			}
 		}

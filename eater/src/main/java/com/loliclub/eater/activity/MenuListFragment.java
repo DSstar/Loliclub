@@ -2,7 +2,7 @@ package com.loliclub.eater.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +12,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
+import com.loliclub.dbhelper.database.DatabaseHelper;
+import com.loliclub.dbhelper.database.DatabaseService;
 import com.loliclub.eater.R;
+import com.loliclub.eater.bean.Menu;
+import com.loliclub.eater.beanservices.MenuService;
+import com.loliclub.eater.properties.MyDatabaseHandler;
 
-import com.loliclub.eater.activity.dummy.DummyContent;
+import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -27,14 +32,14 @@ import com.loliclub.eater.activity.dummy.DummyContent;
  */
 public class MenuListFragment extends Fragment implements AbsListView.OnItemClickListener {
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_RESTAURANTID = "restaurantId";
+    private static final String ARG_CATEGORY = "category";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String restaurantId;
+    private String category;
+
+    private DatabaseHelper databaseHelper;
 
     private OnFragmentInteractionListener mListener;
 
@@ -49,12 +54,11 @@ public class MenuListFragment extends Fragment implements AbsListView.OnItemClic
      */
     private ListAdapter mAdapter;
 
-    // TODO: Rename and change types of parameters
-    public static MenuListFragment newInstance(String param1, String param2) {
+    public static MenuListFragment newInstance(String restaurantId, String category) {
         MenuListFragment fragment = new MenuListFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_RESTAURANTID, restaurantId);
+        args.putString(ARG_CATEGORY, category);
         fragment.setArguments(args);
         return fragment;
     }
@@ -64,6 +68,7 @@ public class MenuListFragment extends Fragment implements AbsListView.OnItemClic
      * fragment (e.g. upon screen orientation changes).
      */
     public MenuListFragment() {
+        databaseHelper = DatabaseService.connectDatabase(getActivity(), MyDatabaseHandler.getInstance());
     }
 
     @Override
@@ -71,11 +76,14 @@ public class MenuListFragment extends Fragment implements AbsListView.OnItemClic
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            restaurantId = getArguments().getString(ARG_RESTAURANTID);
+            category = getArguments().getString(ARG_CATEGORY);
         }
 
-        // TODO: Change Adapter to display your content
+        // 加载菜单数据
+        MenuService service = new MenuService(databaseHelper.getReadableDatabase());
+        List<Menu> list = service.query("restaurantId = ? and category = ? order by name",
+                new String[] {restaurantId, category});
         mAdapter = new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
                 android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);
     }

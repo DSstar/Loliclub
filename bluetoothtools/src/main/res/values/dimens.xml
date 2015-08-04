@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- view common -->
+    <dimen name="status_bar_height">24dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="view_horizontal_margin">8dp</dimen>
+    <dimen name="view_vertical_margin">8dp</dimen>
+    <dimen name="text_horizontal_margin">4dp</dimen>
+    <dimen name="text_vertical_margin">4dp</dimen>
+    <dimen name="toolbar">56dp</dimen>
+    <dimen name="list_singleline">48dp</dimen>
+    <dimen name="list_singleline_with_icon">48dp</dimen>
+    <dimen name="list_singleline_with_img">56dp</dimen>
+    <dimen name="list_singleline_img">40dp</dimen>
+    <dimen name="list_singleline_icon">24dp</dimen>
+    <dimen name="list_doubleline">72dp</dimen>
+    <dimen name="list_text_margin_left">72dp</dimen>
+    <dimen name="button_raised_height">36dp</dimen>
+    <dimen name="button_raised_minwidth">88dp</dimen>
+    <dimen name="button_radio_width">56dp</dimen>
+    <dimen name="button_flat_half">28dp</dimen>
+    <dimen name="button_flat">56dp</dimen>
+    <dimen name="divider_double">16dp</dimen>
+    <dimen name="divider_line">1dp</dimen>
+    <dimen name="cards_radius">2dp</dimen>
+    <dimen name="button_radius">2dp</dimen>
+    <dimen name="elevation_first">6dp</dimen>
+    <dimen name="dialog_text_margin">24dp</dimen>
+
+    <!-- textsize common -->
+    <dimen name="display4">112sp</dimen>
+    <dimen name="display3">56sp</dimen>
+    <dimen name="display2">45sp</dimen>
+    <dimen name="display1">34sp</dimen>
+    <dimen name="headline">24sp</dimen>
+    <dimen name="title">24sp</dimen>
+    <dimen name="subhead">16sp</dimen>
+    <dimen name="body2">14sp</dimen>
+    <dimen name="body1">14sp</dimen>
+    <dimen name="caption">12sp</dimen>
+    <dimen name="menu">14sp</dimen>
+    <dimen name="button">14sp</dimen>
+
+    <!--app -->
+    <dimen name="title_Area_height">200dp</dimen>
+
+</resources>
