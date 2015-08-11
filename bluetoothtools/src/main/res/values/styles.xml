@@ -27,7 +27,7 @@
         <item name="searchViewStyle">@style/MySearchViewStyle</item>
 
         <!--切换时的动画效果-->
-        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+        <!--<item name="android:windowAnimationStyle">@style/AnimationActivity</item>-->
         <!--spinner-->
         <item name="android:spinnerStyle">@style/MySpinnerStyle</item>
         <item name="android:spinnerItemStyle">@style/MySpinnerItemStyle</item>

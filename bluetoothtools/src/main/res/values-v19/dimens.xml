@@ -2,34 +2,23 @@
 
     <!-- Default screen margins, per the Android Design guidelines. -->
     <!-- view common -->
-    <dimen name="status_bar_height">0dp</dimen>
+    <dimen name="status_bar_height">24dp</dimen>
     <dimen name="tool_bar_height">56dp</dimen>
-    <dimen name="tool_status_height">56dp</dimen>
+    <dimen name="tool_status_height">80dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="view_horizontal_margin">8dp</dimen>
     <dimen name="view_vertical_margin">8dp</dimen>
     <dimen name="text_horizontal_margin">4dp</dimen>
     <dimen name="text_vertical_margin">4dp</dimen>
-    <dimen name="toolbar">56dp</dimen>
-    <dimen name="list_singleline">48dp</dimen>
-    <dimen name="list_singleline_with_icon">48dp</dimen>
-    <dimen name="list_singleline_with_img">56dp</dimen>
-    <dimen name="list_singleline_img">40dp</dimen>
-    <dimen name="list_singleline_icon">24dp</dimen>
-    <dimen name="list_doubleline">72dp</dimen>
-    <dimen name="list_text_margin_left">72dp</dimen>
-    <dimen name="button_raised_height">36dp</dimen>
-    <dimen name="button_raised_minwidth">88dp</dimen>
-    <dimen name="button_radio_width">56dp</dimen>
-    <dimen name="button_flat_half">28dp</dimen>
-    <dimen name="button_flat">56dp</dimen>
-    <dimen name="divider_double">16dp</dimen>
+    <dimen name="button_raised_height">48dp</dimen>
     <dimen name="divider_line">1dp</dimen>
+    <dimen name="divider_double">16dp</dimen>
+    <dimen name="list_singleline">48dp</dimen>
+    <dimen name="list_doubleline">72dp</dimen>
     <dimen name="cards_radius">2dp</dimen>
-    <dimen name="button_radius">2dp</dimen>
-    <dimen name="elevation_first">6dp</dimen>
-    <dimen name="dialog_text_margin">24dp</dimen>
+    <dimen name="chilp_text_twoline_height">72dp</dimen>
+    <dimen name="button_flat">56dp</dimen>
 
     <!-- textsize common -->
     <dimen name="display4">112sp</dimen>
@@ -45,7 +34,9 @@
     <dimen name="menu">14sp</dimen>
     <dimen name="button">14sp</dimen>
 
-    <!--app -->
-    <dimen name="title_Area_height">280dp</dimen>
+    <!-- textsize app -->
+    <dimen name="cards_title_textsize">24sp</dimen>
+    <dimen name="cards_content_textsize">16sp</dimen>
+    <dimen name="button_text_normal">16sp</dimen>
 
 </resources>
