@@ -25,7 +25,13 @@
         <item name="android:windowBackground">@android:color/white</item>
         <!-- SearchView -->
         <item name="searchViewStyle">@style/MySearchViewStyle</item>
+
+        <!--切换时的动画效果-->
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
         <!--spinner-->
+        <item name="android:spinnerStyle">@style/MySpinnerStyle</item>
+        <item name="android:spinnerItemStyle">@style/MySpinnerItemStyle</item>
+        <item name="android:spinnerDropDownItemStyle">@style/MyDropDownItemStyle</item>
     </style>
 
     <!-- Application theme. -->
@@ -62,6 +68,35 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">false</item>
         <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <!--APP切换动画-->
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+    </style>
+
+    <!--spinnery样式-->
+    <style name="MySpinnerStyle" parent="Base.Widget.AppCompat.Spinner">
+        <item name="android:dropDownSelector">@drawable/abc_spinner_mtrl_am_alpha</item>
+    </style>
+
+    <style name="MySpinnerItemStyle">
+        <item name="android:textColor">@color/text_black_sub</item>
+        <item name="android:textSize">@dimen/abc_text_size_subhead_material</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+
+    <style name="MyDropDownItemStyle" parent="@style/Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/text_black_main</item>
+        <item name="android:textSize">@dimen/abc_text_size_subhead_material</item>
+        <item name="android:paddingStart">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingEnd">@dimen/activity_horizontal_margin</item>
+        <item name="android:minWidth">@dimen/button_raised_minwidth</item>
+        <item name="android:gravity">left|center_vertical</item>
     </style>
 
 </resources>
