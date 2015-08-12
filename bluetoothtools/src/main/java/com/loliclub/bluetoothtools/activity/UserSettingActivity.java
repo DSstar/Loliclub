@@ -18,7 +18,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class UserSettingActivity extends AppCompatActivity {
 
-    public static final String CONFIG_FILE_NAME = "config";
+    public static final String CONFIG_FILE_NAME = "user_config";
     public static final String USER_NAME = "user_name";
     public static final String USER_AGE = "user_age";
     public static final String USER_HEIGHT = "user_height";

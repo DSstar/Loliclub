@@ -4,6 +4,7 @@
     <!-- view common -->
     <dimen name="status_bar_height">0dp</dimen>
     <dimen name="tool_bar_height">56dp</dimen>
+    <dimen name="navigation_bar_height">0dp</dimen>
     <dimen name="tool_status_height">56dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -17,6 +18,7 @@
     <dimen name="list_singleline_with_img">56dp</dimen>
     <dimen name="list_singleline_img">40dp</dimen>
     <dimen name="list_singleline_icon">24dp</dimen>
+    <dimen name="list_signleline_text_only">36dp</dimen>
     <dimen name="list_doubleline">72dp</dimen>
     <dimen name="list_text_margin_left">72dp</dimen>
     <dimen name="button_raised_height">36dp</dimen>

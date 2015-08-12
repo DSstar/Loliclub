@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary"
     tools:context="com.loliclub.bluetoothtools.activity.ScanActivity">
 
     <RelativeLayout
@@ -16,20 +17,65 @@
             android:id="@id/scan_view_anim"
             android:layout_width="@dimen/list_doubleline"
             android:layout_height="@dimen/list_doubleline"
-            android:layout_marginTop="@dimen/tool_status_height"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/bg_view_circle"/>
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/tool_status_height"
+            android:background="@drawable/bg_view_circle" />
 
         <ImageView
+            android:id="@id/scan_img_bluetooth"
             android:layout_width="@dimen/list_doubleline"
             android:layout_height="@dimen/list_doubleline"
-            android:layout_marginTop="@dimen/tool_status_height"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/tool_status_height"
             android:src="@mipmap/ic_bt_normal_white" />
+
+        <ImageView
+            android:id="@id/scan_img_connect"
+            android:layout_width="@dimen/button_raised_minwidth"
+            android:layout_height="@dimen/list_doubleline"
+            android:layout_marginEnd="@dimen/view_horizontal_margin"
+            android:layout_marginStart="@dimen/view_horizontal_margin"
+            android:layout_marginTop="@dimen/tool_status_height"
+            android:layout_toLeftOf="@id/scan_img_bluetooth"
+            android:src="@mipmap/img_connect"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@id/scan_img_device"
+            android:layout_width="@dimen/list_doubleline"
+            android:layout_height="@dimen/list_doubleline"
+            android:layout_toLeftOf="@id/scan_img_connect"
+            android:layout_marginTop="@dimen/tool_status_height"
+            android:src="@mipmap/ic_bt_normal_white"
+            android:visibility="invisible" />
+
+        <View
+            android:id="@id/scan_line_bt2device"
+            android:layout_width="@dimen/button_raised_minwidth"
+            android:layout_height="2dp"
+            android:background="@android:color/white"
+            android:layout_marginEnd="@dimen/view_horizontal_margin"
+            android:layout_marginStart="@dimen/view_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toLeftOf="@id/scan_img_bluetooth"
+            android:layout_alignTop="@id/scan_img_bluetooth"
+            android:visibility="invisible"/>
+
+        <View
+            android:id="@id/scan_line_device2bt"
+            android:layout_width="@dimen/button_raised_minwidth"
+            android:layout_height="2dp"
+            android:background="@android:color/white"
+            android:layout_marginEnd="@dimen/view_horizontal_margin"
+            android:layout_marginStart="@dimen/view_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_toLeftOf="@id/scan_img_bluetooth"
+            android:layout_alignBottom="@id/scan_img_bluetooth"
+            android:visibility="invisible"/>
 
     </RelativeLayout>
 
@@ -38,15 +84,43 @@
         android:id="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:paddingTop="@dimen/status_bar_height"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="@null"
+        android:minHeight="?attr/actionBarSize"
+        android:paddingTop="@dimen/status_bar_height"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
 
     </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:id="@id/scan_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/scan_rl_show"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/white"
+        android:paddingTop="@dimen/button_flat" />
+
+    <ListView
+        android:id="@id/scan_lv_userinfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/scan_rl_show"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/white"
+        android:paddingTop="@dimen/view_vertical_margin"
+        android:visibility="invisible" />
+
+    <ListView
+        android:id="@id/scan_lv_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/scan_listview"
+        android:layout_alignParentStart="true"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:divider="@color/nocolor" />
 
     <Button
         android:id="@id/scan_btn_reflash"
@@ -58,13 +132,5 @@
         android:layout_marginTop="-28dp"
         android:background="@drawable/btn_scan_reflash"
         android:elevation="@dimen/elevation_first" />
-
-    <ListView
-        android:id="@id/scan_listview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/button_flat_half"
-        android:layout_below="@id/scan_rl_show"
-        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

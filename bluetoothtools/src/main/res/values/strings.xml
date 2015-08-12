@@ -25,7 +25,7 @@
     <string name="bluetooth_pair">Bluetooth Pair</string>
     <string name="pair_with">Pair with %s...</string>
     <string name="select_user">Select User...</string>
-    <string name="select_user_number">Select User%s</string>
+    <string name="select_user_number">Select User %s</string>
     <string name="pair_fail">Pair with %s fail</string>
     <string name="pair_success">Pair with %s successed</string>
 
